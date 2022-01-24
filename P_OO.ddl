@@ -9,13 +9,6 @@
 -- ********************************************* 
 
 
--- Database Section
--- ________________ 
-
-create database MLD db file;
-use MLD db file;
-
-
 -- Tables Section
 -- _____________ 
 
