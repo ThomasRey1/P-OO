@@ -1,0 +1,37 @@
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.exe
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.deps.json
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.runtimeconfig.json
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.runtimeconfig.dev.json
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.dll
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\ref\P-OO_Thesaurus-Thomas-Alexandre.dll
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.pdb
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.csproj.AssemblyReference.cache
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P_OO_Thesaurus_Thomas_Alexandre.Form1.resources
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.csproj.GenerateResource.cache
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.GeneratedMSBuildEditorConfig.editorconfig
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.AssemblyInfoInputs.cache
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.AssemblyInfo.cs
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.csproj.CoreCompileInputs.cache
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.dll
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\ref\P-OO_Thesaurus-Thomas-Alexandre.dll
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.pdb
+F:\01-Projets\P_OO Smart Thesaurus\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.genruntimeconfig.cache
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.exe
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.deps.json
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.runtimeconfig.json
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.runtimeconfig.dev.json
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\ref\P-OO_Thesaurus-Thomas-Alexandre.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.pdb
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.csproj.AssemblyReference.cache
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P_OO_Thesaurus_Thomas_Alexandre.History.resources
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P_OO_Thesaurus_Thomas_Alexandre.indexing.resources
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.csproj.GenerateResource.cache
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.GeneratedMSBuildEditorConfig.editorconfig
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.AssemblyInfoInputs.cache
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.AssemblyInfo.cs
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.csproj.CoreCompileInputs.cache
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\ref\P-OO_Thesaurus-Thomas-Alexandre.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.pdb
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.genruntimeconfig.cache
