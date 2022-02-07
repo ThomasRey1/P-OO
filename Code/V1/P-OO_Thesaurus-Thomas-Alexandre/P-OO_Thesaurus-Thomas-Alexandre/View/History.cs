@@ -16,5 +16,10 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         {
             InitializeComponent();
         }
+
+        private void History_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -13,11 +13,16 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        {            
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new indexing());
+
+            Model model = new Model();
+            Indexing view = new Indexing();
+            Controler controler = new Controler(view, model);
+
+            Application.Run(view);
         }
     }
 }
