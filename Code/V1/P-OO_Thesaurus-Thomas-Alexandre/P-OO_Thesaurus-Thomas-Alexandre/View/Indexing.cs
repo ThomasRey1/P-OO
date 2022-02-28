@@ -23,7 +23,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         }
 
 
-
+        bool changeDisk = false;
         DriveInfo[] allDrive = DriveInfo.GetDrives();
         public Indexing()
         {
@@ -33,11 +33,16 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 cmbBoxDisk.Items.Add(drive.Name);
             }
             cmbBoxDisk.SelectedIndex = 1;
+            lblPathFiles.Text = cmbBoxDisk.Text;
+            cmbBoxExtensions.SelectedIndex = 0;
         }
 
         private void cmbBoxDisk_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblPathFiles.Text = cmbBoxDisk.Text;
+            if (changeDisk == false)
+            {
+                lblPathFiles.Text = cmbBoxDisk.Text;
+            }
         }
 
         private void btnPlusFilter_Click(object sender, EventArgs e)
@@ -62,6 +67,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
         private void picBoxDiskNext_Click(object sender, EventArgs e)
         {
+            changeDisk = false;
             if (cmbBoxDisk.SelectedIndex != allDrive.Count()-1)
             {
                 cmbBoxDisk.SelectedIndex += 1;
@@ -70,6 +76,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
         private void picBoxDiskBefore_Click(object sender, EventArgs e)
         {
+            changeDisk = false;
             if (cmbBoxDisk.SelectedIndex !=0)
             {
                 cmbBoxDisk.SelectedIndex -= 1;
@@ -77,17 +84,19 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         }
 
         private void btnOpenDirectory_Click(object sender, EventArgs e)
-        {            
-            
-            FolderBrowserDialog fbd = new FolderBrowserDialog();            
-            
+        {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            fbd.SelectedPath = lblPathFiles.Text;
             fbd.Description = "--Veuillez séléctionner un dossier à indexer--";
             fbd.ShowNewFolderButton = false;
+            fbd.AutoUpgradeEnabled = false;
             if (fbd.ShowDialog() == DialogResult.OK)
             {
+                changeDisk = true;
                 lblPathFiles.Text = fbd.SelectedPath;
                 cmbBoxDisk.SelectedItem = (fbd.SelectedPath).Substring(0, 3);
-            }
+                changeDisk = false;
+            }            
             {/* 
             ////////Make the filter with all existing extension
             string allFilter = "All Files (*.*)|*.*";
@@ -111,9 +120,16 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         private void btnShowHistoryForm_Click(object sender, EventArgs e)
         {
             Form historyForm = new History();
+            historyForm.StartPosition = FormStartPosition.CenterScreen;
             historyForm.Show();
             this.Hide();
             historyForm.Activate();
+
+        }
+
+        private void cmbBoxExtensions_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

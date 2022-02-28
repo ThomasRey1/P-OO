@@ -21,5 +21,13 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         {
             Application.Exit();
         }
+
+        private void btnReturnIndexingForm_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Indexing form = new Indexing();
+            form.StartPosition = FormStartPosition.CenterScreen; 
+            form.Show();
+        }
     }
 }

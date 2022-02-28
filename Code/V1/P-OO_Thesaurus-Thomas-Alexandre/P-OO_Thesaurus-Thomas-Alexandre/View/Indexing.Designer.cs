@@ -31,6 +31,10 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Indexing));
             this.pnlFiles = new System.Windows.Forms.Panel();
+            this.lstBoxFilePath = new System.Windows.Forms.ListBox();
+            this.lstBoxFileSize = new System.Windows.Forms.ListBox();
+            this.lstBoxFileType = new System.Windows.Forms.ListBox();
+            this.lstBoxFileName = new System.Windows.Forms.ListBox();
             this.lblFilePath = new System.Windows.Forms.Label();
             this.lblFileSize = new System.Windows.Forms.Label();
             this.lblFileType = new System.Windows.Forms.Label();
@@ -43,20 +47,24 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.btnMinusFilter = new System.Windows.Forms.Button();
             this.btnANDFilter = new System.Windows.Forms.Button();
             this.btnORFilter = new System.Windows.Forms.Button();
-            this.picBoxDiskBefore = new System.Windows.Forms.PictureBox();
-            this.picBoxDiskNext = new System.Windows.Forms.PictureBox();
+            this.picBoxFileBefore = new System.Windows.Forms.PictureBox();
+            this.picBoxFileNext = new System.Windows.Forms.PictureBox();
             this.lblPathFiles = new System.Windows.Forms.Label();
             this.btnOpenDirectory = new System.Windows.Forms.Button();
             this.btnShowHistoryForm = new System.Windows.Forms.Button();
             this.btnIndex = new System.Windows.Forms.Button();
             this.pnlFiles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxDiskBefore)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxDiskNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxFileBefore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxFileNext)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlFiles
             // 
             this.pnlFiles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFiles.Controls.Add(this.lstBoxFilePath);
+            this.pnlFiles.Controls.Add(this.lstBoxFileSize);
+            this.pnlFiles.Controls.Add(this.lstBoxFileType);
+            this.pnlFiles.Controls.Add(this.lstBoxFileName);
             this.pnlFiles.Controls.Add(this.lblFilePath);
             this.pnlFiles.Controls.Add(this.lblFileSize);
             this.pnlFiles.Controls.Add(this.lblFileType);
@@ -66,6 +74,42 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.pnlFiles.Name = "pnlFiles";
             this.pnlFiles.Size = new System.Drawing.Size(1040, 423);
             this.pnlFiles.TabIndex = 0;
+            // 
+            // lstBoxFilePath
+            // 
+            this.lstBoxFilePath.FormattingEnabled = true;
+            this.lstBoxFilePath.ItemHeight = 15;
+            this.lstBoxFilePath.Location = new System.Drawing.Point(683, 24);
+            this.lstBoxFilePath.Name = "lstBoxFilePath";
+            this.lstBoxFilePath.Size = new System.Drawing.Size(357, 364);
+            this.lstBoxFilePath.TabIndex = 8;
+            // 
+            // lstBoxFileSize
+            // 
+            this.lstBoxFileSize.FormattingEnabled = true;
+            this.lstBoxFileSize.ItemHeight = 15;
+            this.lstBoxFileSize.Location = new System.Drawing.Point(532, 24);
+            this.lstBoxFileSize.Name = "lstBoxFileSize";
+            this.lstBoxFileSize.Size = new System.Drawing.Size(152, 364);
+            this.lstBoxFileSize.TabIndex = 7;
+            // 
+            // lstBoxFileType
+            // 
+            this.lstBoxFileType.FormattingEnabled = true;
+            this.lstBoxFileType.ItemHeight = 15;
+            this.lstBoxFileType.Location = new System.Drawing.Point(380, 24);
+            this.lstBoxFileType.Name = "lstBoxFileType";
+            this.lstBoxFileType.Size = new System.Drawing.Size(153, 364);
+            this.lstBoxFileType.TabIndex = 6;
+            // 
+            // lstBoxFileName
+            // 
+            this.lstBoxFileName.FormattingEnabled = true;
+            this.lstBoxFileName.ItemHeight = 15;
+            this.lstBoxFileName.Location = new System.Drawing.Point(-1, 24);
+            this.lstBoxFileName.Name = "lstBoxFileName";
+            this.lstBoxFileName.Size = new System.Drawing.Size(382, 364);
+            this.lstBoxFileName.TabIndex = 5;
             // 
             // lblFilePath
             // 
@@ -115,9 +159,9 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             this.lblNumberResults.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblNumberResults.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNumberResults.Location = new System.Drawing.Point(-1, 392);
+            this.lblNumberResults.Location = new System.Drawing.Point(-1, 387);
             this.lblNumberResults.Name = "lblNumberResults";
-            this.lblNumberResults.Size = new System.Drawing.Size(1040, 30);
+            this.lblNumberResults.Size = new System.Drawing.Size(1040, 35);
             this.lblNumberResults.TabIndex = 0;
             this.lblNumberResults.Text = "0 résultats";
             // 
@@ -126,6 +170,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.cmbBoxExtensions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxExtensions.FormattingEnabled = true;
             this.cmbBoxExtensions.Items.AddRange(new object[] {
+            ".*",
             ".png",
             ".jpg",
             ".txt",
@@ -135,9 +180,11 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.cmbBoxExtensions.Name = "cmbBoxExtensions";
             this.cmbBoxExtensions.Size = new System.Drawing.Size(244, 23);
             this.cmbBoxExtensions.TabIndex = 3;
+            this.cmbBoxExtensions.SelectedIndexChanged += new System.EventHandler(this.cmbBoxExtensions_SelectedIndexChanged);
             // 
             // cmbBoxResearch
             // 
+            this.cmbBoxResearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.cmbBoxResearch.FormattingEnabled = true;
             this.cmbBoxResearch.Location = new System.Drawing.Point(168, 69);
             this.cmbBoxResearch.Name = "cmbBoxResearch";
@@ -156,6 +203,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // btnPlusFilter
             // 
+            this.btnPlusFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlusFilter.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnPlusFilter.Location = new System.Drawing.Point(168, 22);
             this.btnPlusFilter.Name = "btnPlusFilter";
@@ -167,6 +215,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // btnMinusFilter
             // 
+            this.btnMinusFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinusFilter.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnMinusFilter.Location = new System.Drawing.Point(321, 22);
             this.btnMinusFilter.Name = "btnMinusFilter";
@@ -178,6 +227,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // btnANDFilter
             // 
+            this.btnANDFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnANDFilter.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnANDFilter.Location = new System.Drawing.Point(474, 22);
             this.btnANDFilter.Name = "btnANDFilter";
@@ -189,6 +239,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // btnORFilter
             // 
+            this.btnORFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnORFilter.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnORFilter.Location = new System.Drawing.Point(627, 22);
             this.btnORFilter.Name = "btnORFilter";
@@ -198,30 +249,33 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.btnORFilter.UseVisualStyleBackColor = true;
             this.btnORFilter.Click += new System.EventHandler(this.btnORFilter_Click);
             // 
-            // picBoxDiskBefore
+            // picBoxFileBefore
             // 
-            this.picBoxDiskBefore.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxDiskBefore.BackgroundImage")));
-            this.picBoxDiskBefore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBoxDiskBefore.Location = new System.Drawing.Point(13, 22);
-            this.picBoxDiskBefore.Name = "picBoxDiskBefore";
-            this.picBoxDiskBefore.Size = new System.Drawing.Size(42, 42);
-            this.picBoxDiskBefore.TabIndex = 7;
-            this.picBoxDiskBefore.TabStop = false;
-            this.picBoxDiskBefore.Click += new System.EventHandler(this.picBoxDiskBefore_Click);
+            this.picBoxFileBefore.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxFileBefore.BackgroundImage")));
+            this.picBoxFileBefore.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBoxFileBefore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxFileBefore.Location = new System.Drawing.Point(13, 22);
+            this.picBoxFileBefore.Name = "picBoxFileBefore";
+            this.picBoxFileBefore.Size = new System.Drawing.Size(42, 42);
+            this.picBoxFileBefore.TabIndex = 7;
+            this.picBoxFileBefore.TabStop = false;
+            this.picBoxFileBefore.Click += new System.EventHandler(this.picBoxDiskBefore_Click);
             // 
-            // picBoxDiskNext
+            // picBoxFileNext
             // 
-            this.picBoxDiskNext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxDiskNext.BackgroundImage")));
-            this.picBoxDiskNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picBoxDiskNext.Location = new System.Drawing.Point(98, 22);
-            this.picBoxDiskNext.Name = "picBoxDiskNext";
-            this.picBoxDiskNext.Size = new System.Drawing.Size(42, 42);
-            this.picBoxDiskNext.TabIndex = 8;
-            this.picBoxDiskNext.TabStop = false;
-            this.picBoxDiskNext.Click += new System.EventHandler(this.picBoxDiskNext_Click);
+            this.picBoxFileNext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBoxFileNext.BackgroundImage")));
+            this.picBoxFileNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picBoxFileNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picBoxFileNext.Location = new System.Drawing.Point(98, 22);
+            this.picBoxFileNext.Name = "picBoxFileNext";
+            this.picBoxFileNext.Size = new System.Drawing.Size(42, 42);
+            this.picBoxFileNext.TabIndex = 8;
+            this.picBoxFileNext.TabStop = false;
+            this.picBoxFileNext.Click += new System.EventHandler(this.picBoxDiskNext_Click);
             // 
             // lblPathFiles
             // 
+            this.lblPathFiles.AutoEllipsis = true;
             this.lblPathFiles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPathFiles.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblPathFiles.Location = new System.Drawing.Point(17, 561);
@@ -233,6 +287,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // btnOpenDirectory
             // 
+            this.btnOpenDirectory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOpenDirectory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenDirectory.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnOpenDirectory.Location = new System.Drawing.Point(522, 561);
@@ -245,6 +300,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // btnShowHistoryForm
             // 
+            this.btnShowHistoryForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowHistoryForm.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnShowHistoryForm.Location = new System.Drawing.Point(675, 561);
             this.btnShowHistoryForm.Name = "btnShowHistoryForm";
@@ -256,6 +312,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // btnIndex
             // 
+            this.btnIndex.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIndex.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnIndex.Location = new System.Drawing.Point(900, 561);
             this.btnIndex.Name = "btnIndex";
@@ -273,8 +330,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.Controls.Add(this.btnShowHistoryForm);
             this.Controls.Add(this.btnOpenDirectory);
             this.Controls.Add(this.lblPathFiles);
-            this.Controls.Add(this.picBoxDiskNext);
-            this.Controls.Add(this.picBoxDiskBefore);
+            this.Controls.Add(this.picBoxFileNext);
+            this.Controls.Add(this.picBoxFileBefore);
             this.Controls.Add(this.btnORFilter);
             this.Controls.Add(this.btnANDFilter);
             this.Controls.Add(this.btnMinusFilter);
@@ -287,10 +344,11 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Indexing";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thésaurus - IE & CO";
             this.pnlFiles.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxDiskBefore)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxDiskNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxFileBefore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxFileNext)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -305,8 +363,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         private System.Windows.Forms.Button btnMinusFilter;
         private System.Windows.Forms.Button btnANDFilter;
         private System.Windows.Forms.Button btnORFilter;
-        private System.Windows.Forms.PictureBox picBoxDiskBefore;
-        private System.Windows.Forms.PictureBox picBoxDiskNext;
+        private System.Windows.Forms.PictureBox picBoxFileBefore;
+        private System.Windows.Forms.PictureBox picBoxFileNext;
         private System.Windows.Forms.Label lblFilePath;
         private System.Windows.Forms.Label lblFileSize;
         private System.Windows.Forms.Label lblFileType;
@@ -316,6 +374,10 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         private System.Windows.Forms.Button btnOpenDirectory;
         private System.Windows.Forms.Button btnShowHistoryForm;
         private System.Windows.Forms.Button btnIndex;
+        private System.Windows.Forms.ListBox lstBoxFileName;
+        private System.Windows.Forms.ListBox lstBoxFilePath;
+        private System.Windows.Forms.ListBox lstBoxFileSize;
+        private System.Windows.Forms.ListBox lstBoxFileType;
     }
 }
 

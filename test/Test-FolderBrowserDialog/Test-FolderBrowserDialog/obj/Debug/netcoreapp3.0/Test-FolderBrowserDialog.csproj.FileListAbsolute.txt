@@ -1,0 +1,16 @@
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\bin\Debug\netcoreapp3.0\Test-FolderBrowserDialog.exe
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\bin\Debug\netcoreapp3.0\Test-FolderBrowserDialog.deps.json
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\bin\Debug\netcoreapp3.0\Test-FolderBrowserDialog.runtimeconfig.json
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\bin\Debug\netcoreapp3.0\Test-FolderBrowserDialog.runtimeconfig.dev.json
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\bin\Debug\netcoreapp3.0\Test-FolderBrowserDialog.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\bin\Debug\netcoreapp3.0\Test-FolderBrowserDialog.pdb
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\obj\Debug\netcoreapp3.0\Test-FolderBrowserDialog.csproj.AssemblyReference.cache
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\obj\Debug\netcoreapp3.0\Test_FolderBrowserDialog.Form1.resources
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\obj\Debug\netcoreapp3.0\Test-FolderBrowserDialog.csproj.GenerateResource.cache
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\obj\Debug\netcoreapp3.0\Test-FolderBrowserDialog.GeneratedMSBuildEditorConfig.editorconfig
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\obj\Debug\netcoreapp3.0\Test-FolderBrowserDialog.AssemblyInfoInputs.cache
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\obj\Debug\netcoreapp3.0\Test-FolderBrowserDialog.AssemblyInfo.cs
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\obj\Debug\netcoreapp3.0\Test-FolderBrowserDialog.csproj.CoreCompileInputs.cache
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\obj\Debug\netcoreapp3.0\Test-FolderBrowserDialog.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\obj\Debug\netcoreapp3.0\Test-FolderBrowserDialog.pdb
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO\test\Test-FolderBrowserDialog\Test-FolderBrowserDialog\obj\Debug\netcoreapp3.0\Test-FolderBrowserDialog.genruntimeconfig.cache
