@@ -41,16 +41,16 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.lblIndexingDate = new System.Windows.Forms.Label();
             this.lblFilePath = new System.Windows.Forms.Label();
             this.pnlFiles = new System.Windows.Forms.Panel();
-            this.lstBoxFileNumber = new System.Windows.Forms.ListBox();
-            this.lstBoxFilePath = new System.Windows.Forms.ListBox();
             this.lstBoxFileIndexingDate = new System.Windows.Forms.ListBox();
+            this.lstBoxFilePath = new System.Windows.Forms.ListBox();
+            this.lstBoxFileNumber = new System.Windows.Forms.ListBox();
             this.pnlFiles.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnReturnIndexingForm
             // 
             this.btnReturnIndexingForm.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnReturnIndexingForm.Location = new System.Drawing.Point(31, 33);
+            this.btnReturnIndexingForm.Location = new System.Drawing.Point(12, 33);
             this.btnReturnIndexingForm.Name = "btnReturnIndexingForm";
             this.btnReturnIndexingForm.Size = new System.Drawing.Size(131, 70);
             this.btnReturnIndexingForm.TabIndex = 0;
@@ -169,14 +169,14 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.pnlFiles.Size = new System.Drawing.Size(1040, 423);
             this.pnlFiles.TabIndex = 12;
             // 
-            // lstBoxFileNumber
+            // lstBoxFileIndexingDate
             // 
-            this.lstBoxFileNumber.FormattingEnabled = true;
-            this.lstBoxFileNumber.ItemHeight = 15;
-            this.lstBoxFileNumber.Location = new System.Drawing.Point(-1, 24);
-            this.lstBoxFileNumber.Name = "lstBoxFileNumber";
-            this.lstBoxFileNumber.Size = new System.Drawing.Size(53, 364);
-            this.lstBoxFileNumber.TabIndex = 5;
+            this.lstBoxFileIndexingDate.FormattingEnabled = true;
+            this.lstBoxFileIndexingDate.ItemHeight = 15;
+            this.lstBoxFileIndexingDate.Location = new System.Drawing.Point(681, 24);
+            this.lstBoxFileIndexingDate.Name = "lstBoxFileIndexingDate";
+            this.lstBoxFileIndexingDate.Size = new System.Drawing.Size(358, 364);
+            this.lstBoxFileIndexingDate.TabIndex = 7;
             // 
             // lstBoxFilePath
             // 
@@ -187,14 +187,14 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.lstBoxFilePath.Size = new System.Drawing.Size(631, 364);
             this.lstBoxFilePath.TabIndex = 6;
             // 
-            // lstBoxFileIndexingDate
+            // lstBoxFileNumber
             // 
-            this.lstBoxFileIndexingDate.FormattingEnabled = true;
-            this.lstBoxFileIndexingDate.ItemHeight = 15;
-            this.lstBoxFileIndexingDate.Location = new System.Drawing.Point(681, 24);
-            this.lstBoxFileIndexingDate.Name = "lstBoxFileIndexingDate";
-            this.lstBoxFileIndexingDate.Size = new System.Drawing.Size(358, 364);
-            this.lstBoxFileIndexingDate.TabIndex = 7;
+            this.lstBoxFileNumber.FormattingEnabled = true;
+            this.lstBoxFileNumber.ItemHeight = 15;
+            this.lstBoxFileNumber.Location = new System.Drawing.Point(-1, 24);
+            this.lstBoxFileNumber.Name = "lstBoxFileNumber";
+            this.lstBoxFileNumber.Size = new System.Drawing.Size(53, 364);
+            this.lstBoxFileNumber.TabIndex = 5;
             // 
             // History
             // 
