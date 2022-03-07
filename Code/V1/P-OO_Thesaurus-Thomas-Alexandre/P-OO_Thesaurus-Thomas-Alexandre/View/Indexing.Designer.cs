@@ -81,6 +81,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.lstBoxFilePath.ItemHeight = 15;
             this.lstBoxFilePath.Location = new System.Drawing.Point(683, 24);
             this.lstBoxFilePath.Name = "lstBoxFilePath";
+            this.lstBoxFilePath.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.lstBoxFilePath.Size = new System.Drawing.Size(357, 364);
             this.lstBoxFilePath.TabIndex = 8;
             // 
@@ -90,6 +91,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.lstBoxFileSize.ItemHeight = 15;
             this.lstBoxFileSize.Location = new System.Drawing.Point(532, 24);
             this.lstBoxFileSize.Name = "lstBoxFileSize";
+            this.lstBoxFileSize.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.lstBoxFileSize.Size = new System.Drawing.Size(152, 364);
             this.lstBoxFileSize.TabIndex = 7;
             // 
@@ -99,6 +101,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.lstBoxFileType.ItemHeight = 15;
             this.lstBoxFileType.Location = new System.Drawing.Point(380, 24);
             this.lstBoxFileType.Name = "lstBoxFileType";
+            this.lstBoxFileType.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.lstBoxFileType.Size = new System.Drawing.Size(153, 364);
             this.lstBoxFileType.TabIndex = 6;
             // 
@@ -110,6 +113,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.lstBoxFileName.Name = "lstBoxFileName";
             this.lstBoxFileName.Size = new System.Drawing.Size(382, 364);
             this.lstBoxFileName.TabIndex = 5;
+            this.lstBoxFileName.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstBoxFileName_MouseDoubleClick);
             // 
             // lblFilePath
             // 
@@ -190,6 +194,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.cmbBoxResearch.Name = "cmbBoxResearch";
             this.cmbBoxResearch.Size = new System.Drawing.Size(612, 23);
             this.cmbBoxResearch.TabIndex = 2;
+            this.cmbBoxResearch.TextChanged += new System.EventHandler(this.cmbBoxResearch_TextChanged);
             // 
             // cmbBoxDisk
             // 

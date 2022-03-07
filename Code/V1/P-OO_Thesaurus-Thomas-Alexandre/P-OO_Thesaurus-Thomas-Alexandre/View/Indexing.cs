@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace P_OO_Thesaurus_Thomas_Alexandre
 {
@@ -24,6 +25,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
 
         bool changeDisk = false;
+        int itemClicked = 0;
         DriveInfo[] allDrive = DriveInfo.GetDrives();
         public Indexing()
         {
@@ -32,9 +34,11 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             {
                 cmbBoxDisk.Items.Add(drive.Name);
             }
-            cmbBoxDisk.SelectedIndex = 1;
             lblPathFiles.Text = cmbBoxDisk.Text;
             cmbBoxExtensions.SelectedIndex = 0;
+            cmbBoxDisk.SelectedIndex = 3;
+            Research research = new Research(lblPathFiles.Text);
+            research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
         }
 
         private void cmbBoxDisk_SelectedIndexChanged(object sender, EventArgs e)
@@ -42,6 +46,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             if (changeDisk == false)
             {
                 lblPathFiles.Text = cmbBoxDisk.Text;
+                Research research = new Research(lblPathFiles.Text);
+                research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
             }
         }
 
@@ -95,6 +101,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 changeDisk = true;
                 lblPathFiles.Text = fbd.SelectedPath;
                 cmbBoxDisk.SelectedItem = (fbd.SelectedPath).Substring(0, 3);
+                Research research = new Research(lblPathFiles.Text);
+                research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
                 changeDisk = false;
             }            
             {/* 
@@ -130,6 +138,36 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         private void cmbBoxExtensions_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbBoxResearch_TextChanged(object sender, EventArgs e)
+        {
+            Research research = new Research(lblPathFiles.Text);
+            research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1),lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath); 
+        }
+
+        private void lstBoxFileName_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = this.lstBoxFileName.IndexFromPoint(e.Location);
+            if (index != System.Windows.Forms.ListBox.NoMatches)
+            {
+                try
+                {
+                    if (lstBoxFileType.Items[index] != null)
+                    {
+                        //open file                
+                        Process process = new Process();
+                        process.StartInfo = new ProcessStartInfo()
+                        {
+                            UseShellExecute = true,
+                            FileName = lstBoxFilePath.Items[index].ToString()
+                        };
+                        process.Start();
+                    }
+                }
+                catch { }
+                
+            }
         }
     }
 }
