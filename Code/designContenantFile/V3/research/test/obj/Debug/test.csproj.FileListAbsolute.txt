@@ -18,3 +18,13 @@ C:\Users\thorey\Desktop\research\test\obj\Debug\test.csproj.GenerateResource.cac
 C:\Users\thorey\Desktop\research\test\obj\Debug\test.csproj.CoreCompileInputs.cache
 C:\Users\thorey\Desktop\research\test\obj\Debug\test.exe
 C:\Users\thorey\Desktop\research\test\obj\Debug\test.pdb
+F:\année2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\designContenantFile\V3\research\test\bin\Debug\test.exe.config
+F:\année2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\designContenantFile\V3\research\test\bin\Debug\test.exe
+F:\année2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\designContenantFile\V3\research\test\bin\Debug\test.pdb
+F:\année2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\designContenantFile\V3\research\test\obj\Debug\test.csproj.AssemblyReference.cache
+F:\année2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\designContenantFile\V3\research\test\obj\Debug\test.Form1.resources
+F:\année2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\designContenantFile\V3\research\test\obj\Debug\test.Properties.Resources.resources
+F:\année2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\designContenantFile\V3\research\test\obj\Debug\test.csproj.GenerateResource.cache
+F:\année2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\designContenantFile\V3\research\test\obj\Debug\test.csproj.CoreCompileInputs.cache
+F:\année2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\designContenantFile\V3\research\test\obj\Debug\test.exe
+F:\année2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\designContenantFile\V3\research\test\obj\Debug\test.pdb

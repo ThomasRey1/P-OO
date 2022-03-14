@@ -39,6 +39,7 @@ namespace test
             // 
             // cbxResearch
             // 
+            this.cbxResearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxResearch.FormattingEnabled = true;
             this.cbxResearch.Location = new System.Drawing.Point(300, 35);
             this.cbxResearch.Name = "cbxResearch";
@@ -76,6 +77,7 @@ namespace test
             // 
             // cbxExtension
             // 
+            this.cbxExtension.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxExtension.FormattingEnabled = true;
             this.cbxExtension.Location = new System.Drawing.Point(525, 35);
             this.cbxExtension.Name = "cbxExtension";
