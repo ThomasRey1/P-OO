@@ -29,6 +29,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Indexing));
             this.pnlFiles = new System.Windows.Forms.Panel();
             this.lstBoxFilePath = new System.Windows.Forms.ListBox();
@@ -53,9 +54,12 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.btnOpenDirectory = new System.Windows.Forms.Button();
             this.btnShowHistoryForm = new System.Windows.Forms.Button();
             this.btnIndex = new System.Windows.Forms.Button();
+            this.picboxPreviousFile = new System.Windows.Forms.PictureBox();
+            this.tlTip = new System.Windows.Forms.ToolTip(this.components);
             this.pnlFiles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFileBefore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFileNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxPreviousFile)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlFiles
@@ -78,6 +82,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // lstBoxFilePath
             // 
             this.lstBoxFilePath.FormattingEnabled = true;
+            this.lstBoxFilePath.HorizontalScrollbar = true;
             this.lstBoxFilePath.ItemHeight = 15;
             this.lstBoxFilePath.Location = new System.Drawing.Point(683, 24);
             this.lstBoxFilePath.Name = "lstBoxFilePath";
@@ -214,7 +219,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.btnPlusFilter.Name = "btnPlusFilter";
             this.btnPlusFilter.Size = new System.Drawing.Size(153, 41);
             this.btnPlusFilter.TabIndex = 4;
-            this.btnPlusFilter.Text = "+";
+            this.btnPlusFilter.Text = "AVEC";
             this.btnPlusFilter.UseVisualStyleBackColor = true;
             this.btnPlusFilter.Click += new System.EventHandler(this.btnPlusFilter_Click);
             // 
@@ -226,7 +231,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.btnMinusFilter.Name = "btnMinusFilter";
             this.btnMinusFilter.Size = new System.Drawing.Size(153, 41);
             this.btnMinusFilter.TabIndex = 5;
-            this.btnMinusFilter.Text = "-";
+            this.btnMinusFilter.Text = "SANS";
             this.btnMinusFilter.UseVisualStyleBackColor = true;
             this.btnMinusFilter.Click += new System.EventHandler(this.btnMinusFilter_Click);
             // 
@@ -283,9 +288,9 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.lblPathFiles.AutoEllipsis = true;
             this.lblPathFiles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPathFiles.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblPathFiles.Location = new System.Drawing.Point(17, 561);
+            this.lblPathFiles.Location = new System.Drawing.Point(12, 593);
             this.lblPathFiles.Name = "lblPathFiles";
-            this.lblPathFiles.Size = new System.Drawing.Size(506, 41);
+            this.lblPathFiles.Size = new System.Drawing.Size(511, 41);
             this.lblPathFiles.TabIndex = 9;
             this.lblPathFiles.Text = "K:/INF";
             this.lblPathFiles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -295,7 +300,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.btnOpenDirectory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOpenDirectory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOpenDirectory.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnOpenDirectory.Location = new System.Drawing.Point(522, 561);
+            this.btnOpenDirectory.Location = new System.Drawing.Point(522, 593);
             this.btnOpenDirectory.Name = "btnOpenDirectory";
             this.btnOpenDirectory.Size = new System.Drawing.Size(75, 41);
             this.btnOpenDirectory.TabIndex = 10;
@@ -307,7 +312,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             this.btnShowHistoryForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowHistoryForm.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnShowHistoryForm.Location = new System.Drawing.Point(675, 561);
+            this.btnShowHistoryForm.Location = new System.Drawing.Point(675, 593);
             this.btnShowHistoryForm.Name = "btnShowHistoryForm";
             this.btnShowHistoryForm.Size = new System.Drawing.Size(153, 41);
             this.btnShowHistoryForm.TabIndex = 11;
@@ -319,18 +324,38 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             this.btnIndex.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnIndex.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnIndex.Location = new System.Drawing.Point(900, 561);
+            this.btnIndex.Location = new System.Drawing.Point(900, 593);
             this.btnIndex.Name = "btnIndex";
             this.btnIndex.Size = new System.Drawing.Size(153, 41);
             this.btnIndex.TabIndex = 12;
             this.btnIndex.Text = "Indexer";
             this.btnIndex.UseVisualStyleBackColor = true;
             // 
+            // picboxPreviousFile
+            // 
+            this.picboxPreviousFile.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picboxPreviousFile.BackgroundImage")));
+            this.picboxPreviousFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picboxPreviousFile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picboxPreviousFile.Location = new System.Drawing.Point(12, 548);
+            this.picboxPreviousFile.Name = "picboxPreviousFile";
+            this.picboxPreviousFile.Size = new System.Drawing.Size(42, 42);
+            this.picboxPreviousFile.TabIndex = 13;
+            this.picboxPreviousFile.TabStop = false;
+            this.picboxPreviousFile.Click += new System.EventHandler(this.picboxPreviousFile_Click);
+            // 
+            // tlTip
+            // 
+            this.tlTip.AutoPopDelay = 10000;
+            this.tlTip.InitialDelay = 500;
+            this.tlTip.ReshowDelay = 100;
+            this.tlTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
             // Indexing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 611);
+            this.ClientSize = new System.Drawing.Size(1084, 652);
+            this.Controls.Add(this.picboxPreviousFile);
             this.Controls.Add(this.btnIndex);
             this.Controls.Add(this.btnShowHistoryForm);
             this.Controls.Add(this.btnOpenDirectory);
@@ -354,6 +379,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.pnlFiles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFileBefore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxFileNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxPreviousFile)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -383,6 +409,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         private System.Windows.Forms.ListBox lstBoxFilePath;
         private System.Windows.Forms.ListBox lstBoxFileSize;
         private System.Windows.Forms.ListBox lstBoxFileType;
+        private System.Windows.Forms.PictureBox picboxPreviousFile;
+        private System.Windows.Forms.ToolTip tlTip;
     }
 }
 

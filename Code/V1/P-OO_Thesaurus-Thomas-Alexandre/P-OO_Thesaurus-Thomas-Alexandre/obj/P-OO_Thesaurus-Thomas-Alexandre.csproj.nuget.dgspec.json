@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO\\Code\\V1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {}
+    "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\V1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {}
   },
   "projects": {
-    "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO\\Code\\V1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {
+    "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\V1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO\\Code\\V1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
+        "projectUniqueName": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\V1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
         "projectName": "P-OO_Thesaurus-Thomas-Alexandre",
-        "projectPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO\\Code\\V1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
+        "projectPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\V1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
         "packagesPath": "C:\\Users\\pd50uyl\\.nuget\\packages\\",
-        "outputPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO\\Code\\V1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\obj\\",
+        "outputPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\V1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
