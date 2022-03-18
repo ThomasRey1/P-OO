@@ -15,7 +15,7 @@ using System.Diagnostics;
 
 namespace P_OO_Thesaurus_Thomas_Alexandre
 {
-    class File
+    public class File
     {
         // Getter - Setter
         /// <summary>

@@ -26,7 +26,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
         bool changeDisk = false;
         bool componentIsInitialize = false;
-        DriveInfo[] allDrive = DriveInfo.GetDrives();
+        DriveInfo[] allDrive = DriveInfo.GetDrives();        
+
         public Indexing()
         {
             InitializeComponent();
@@ -34,8 +35,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             tlTip.SetToolTip(btnPlusFilter, "Indique que dans ce mot DOIT être contenu dans la recherche");
             tlTip.SetToolTip(btnMinusFilter, "Indique que dans ce mot NE DOIT PAS être contenu dans la recherche");
             tlTip.SetToolTip(btnANDFilter, "Indique que dans ce mot ET un autre doivent être contenu dans la recherche");
-            tlTip.SetToolTip(btnORFilter,"Indique que dans ce mot OU un autre doivent être contenu dans la recherche");
-
+            tlTip.SetToolTip(btnORFilter,"Indique que dans ce mot OU un autre doivent être contenu dans la recherche");            
 
             foreach (DriveInfo drive in allDrive)
             {

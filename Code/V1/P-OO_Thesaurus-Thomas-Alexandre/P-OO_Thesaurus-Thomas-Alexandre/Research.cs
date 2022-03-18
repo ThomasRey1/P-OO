@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace P_OO_Thesaurus_Thomas_Alexandre
 {
-    class Research
+    public  class Research
     {// Properties
         private string _researchingString;
         private List<File> _filesObtained;

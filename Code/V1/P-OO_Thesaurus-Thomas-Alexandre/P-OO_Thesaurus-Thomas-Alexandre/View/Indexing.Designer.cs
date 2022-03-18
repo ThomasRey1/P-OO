@@ -405,12 +405,12 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         private System.Windows.Forms.Button btnOpenDirectory;
         private System.Windows.Forms.Button btnShowHistoryForm;
         private System.Windows.Forms.Button btnIndex;
-        private System.Windows.Forms.ListBox lstBoxFileName;
-        private System.Windows.Forms.ListBox lstBoxFilePath;
-        private System.Windows.Forms.ListBox lstBoxFileSize;
-        private System.Windows.Forms.ListBox lstBoxFileType;
         private System.Windows.Forms.PictureBox picboxPreviousFile;
         private System.Windows.Forms.ToolTip tlTip;
+        public System.Windows.Forms.ListBox lstBoxFileName;
+        public System.Windows.Forms.ListBox lstBoxFilePath;
+        public System.Windows.Forms.ListBox lstBoxFileSize;
+        public System.Windows.Forms.ListBox lstBoxFileType;
     }
 }
 
