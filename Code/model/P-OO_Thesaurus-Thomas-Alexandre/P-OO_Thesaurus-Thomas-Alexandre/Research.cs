@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace P_OO_Thesaurus_Thomas_Alexandre
 {
-    class Research
+    public class Research
     {// Properties
         private string _researchingString;
         private List<File> _filesObtained = new List<File>();
@@ -13,7 +13,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         private int _numberResult;
 
         // Getter - Setter
-
 
         /// <summary>
         /// Constructor
@@ -56,7 +55,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             {
                 if (currentFile.CurrentFile != null)
                 {
-                    if (extension == "*" && currentFile.CurrentFile.Name.Contains(research))
+                    if (extension == ".*" && currentFile.CurrentFile.Name.Contains(research))
                     {
                         _filesObtained.Add(currentFile);
                     }
@@ -67,11 +66,11 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 }
                 else
                 {
-                    if (extension == "*" && currentFile.CurrentDirectory.Name.Contains(research))
+                    if (extension == ".*" && currentFile.CurrentDirectory.Name.Contains(research))
                     {
                         _filesObtained.Add(currentFile);
                     }
-                    else if (extension == "Dossier" && currentFile.CurrentDirectory.Name.Contains(research))
+                    else if (extension == ".Dossier" && currentFile.CurrentDirectory.Name.Contains(research))
                     {
                         _filesObtained.Add(currentFile);
                     }

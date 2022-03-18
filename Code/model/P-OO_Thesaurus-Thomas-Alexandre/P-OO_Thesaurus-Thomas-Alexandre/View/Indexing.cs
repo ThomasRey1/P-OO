@@ -39,7 +39,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             cmbBoxExtensions.SelectedIndex = 0;
             cmbBoxDisk.SelectedIndex = 3;
             Research research = new Research(lblPathFiles.Text);
-            research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
+            research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
         }
 
         private void cmbBoxDisk_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             {
                 lblPathFiles.Text = cmbBoxDisk.Text;
                 Research research = new Research(lblPathFiles.Text);
-                research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
+                research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
             }
         }
 
@@ -103,7 +103,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 lblPathFiles.Text = fbd.SelectedPath;
                 cmbBoxDisk.SelectedItem = (fbd.SelectedPath).Substring(0, 3);
                 Research research = new Research(lblPathFiles.Text);
-                research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
+                research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
                 changeDisk = false;
             }            
             {/* 
@@ -144,7 +144,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         private void cmbBoxResearch_TextChanged(object sender, EventArgs e)
         {
             Research research = new Research(lblPathFiles.Text);
-            research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1),lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath); 
+            research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text,lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath); 
         }
 
         private void lstBoxFileName_MouseDoubleClick(object sender, MouseEventArgs e)
