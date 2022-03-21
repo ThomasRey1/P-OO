@@ -5,10 +5,17 @@ using System.Windows.Forms;
 
 namespace P_OO_Thesaurus_Thomas_Alexandre
 {
-    public  class Research
+    public  class ModelResearch
     {// Properties
         private string _researchingString;
         private List<File> _filesObtained;
+        private Controler _controller;
+
+        public Controler Controler
+        {
+            get { return _controller; }
+            set { _controller = value; }
+        }
 
         public List<File> FileObtained
         {
@@ -24,7 +31,11 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         /// <summary>
         /// Constructor
         /// </summary>
-        public Research(string path)
+        public ModelResearch()
+        {
+           
+        }
+        public void GetPath(string path)
         {
             DirectoryInfo drive = new DirectoryInfo(path);
             FileInfo[] fileName = drive.GetFiles("*.*");
@@ -45,7 +56,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 AllFiles.Add(currentDirectory);
             }
         }
-        
         public void AddFilter(string btnFunction)
         {
             switch (btnFunction)
@@ -67,7 +77,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             }            
         }
 
-        public List<File> Search(string research, string extension, ListBox lstBoxName, ListBox lstBoxType, ListBox lstBoxSize, ListBox lstBoxPath, string filter = "")
+        public List<File> Search(string research, string extension, Label lblNumberResult, string filter = "filter")
         {
             _filesObtained = new List<File>();
             foreach (File currentFile in AllFiles)
@@ -97,37 +107,23 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 
             }
 
-            ShowResult(lstBoxName, lstBoxType, lstBoxSize, lstBoxPath);
+            lblNumberResult.Text = CountResult();
             return _filesObtained;
         }
 
-        private void ShowResult(ListBox lstBoxName, ListBox lstBoxType, ListBox lstBoxSize, ListBox lstBoxPath)
+        public string CountResult()
         {
-            lstBoxName.Items.Clear();
-            lstBoxType.Items.Clear();
-            lstBoxSize.Items.Clear();
-            lstBoxPath.Items.Clear();
-            foreach (File file in _filesObtained)
+            int  number = _filesObtained.Count;
+            string numberResult = number.ToString();
+            if (number <= 1)
             {
-                if (file.CurrentFile != null)
-                {
-                    lstBoxName.Items.Add($"{file.CurrentFile.Name}");
-                    lstBoxType.Items.Add($"{file.CurrentFile.Extension.ToLower()}");
-                    lstBoxSize.Items.Add($"{file.CurrentFile.Length}");
-                    lstBoxPath.Items.Add($"{file.CurrentFile.FullName}");
-                }
-                else
-                {
-                    lstBoxName.Items.Add($"{file.CurrentDirectory.Name}");
-                    lstBoxType.Items.Add("Dossier");
-                    lstBoxPath.Items.Add($"{file.CurrentDirectory.FullName}");
-                }
+                numberResult += " Résultat";
             }
-        }
-
-        public int CountResult()
-        {
-            return _filesObtained.Count;
+            else 
+            {
+                numberResult += " Résultats";
+            }
+            return numberResult;
         }
     }
 }

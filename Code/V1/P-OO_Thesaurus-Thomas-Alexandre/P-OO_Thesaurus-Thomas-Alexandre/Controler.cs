@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace P_OO_Thesaurus_Thomas_Alexandre
 {
@@ -10,12 +11,30 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
     {
         private Indexing _view;
 
-        private Model _model;
+        private History _viewHistory;
 
-        public Model Model
+        private ModelIndexingHistory _modelIndexing;
+
+        private ModelResearch _modelResearch;
+
+        public ModelResearch ModelResearch
         {
-            get { return _model; }
-            set { _model = value; }
+            get { return _modelResearch; }
+            set { _modelResearch = value; }
+        }
+
+
+        public History ViewHistory
+        {
+            get { return _viewHistory; }
+            set { _viewHistory = value; }
+        }
+
+
+        public ModelIndexingHistory ModelIndexing
+        {
+            get { return _modelIndexing; }
+            set { _modelIndexing = value; }
         }
 
 
@@ -25,13 +44,52 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             set { _view = value; }
         }
 
-        public Controler(Indexing indexing, Model model)
+        public Controler(History history, Indexing indexing, ModelIndexingHistory modelIndexing, ModelResearch modelResearch)
         {
+            _viewHistory = history;
             _view = indexing;
-            _model = model;
+            _modelIndexing = modelIndexing;
+            _modelResearch = modelResearch;
+            _viewHistory.Controler = this;
             _view.Controler = this;
-            _model.Controler = this;
+            _modelIndexing.Controler = this;
+            _modelResearch.Controler = this;
+
+            _view.Start();
         }
 
+        public void ShowHistory()
+        {
+            _viewHistory.Location = _view.Location;
+            _viewHistory.GetAndShowHistory(this.GetAndShowHistory());
+            _view.Hide();
+            _viewHistory.Show();
+        }
+
+        public void ShowIndexing()
+        {
+            _viewHistory.Hide();
+            _view.Show();
+        }
+
+        public void GetPath(string path)
+        {
+            ModelResearch.GetPath(path);
+        }
+
+        public List<File> Search(string research, string extension, Label lblNbResult)
+        {
+            return ModelResearch.Search(research, extension, lblNbResult);
+        }
+
+        public void UpdateIndexingHistory(Index index)
+        {
+            ModelIndexing.UpdateIndexingHistory(index);
+        }
+
+        public List<Index> GetAndShowHistory()
+        {
+            return ModelIndexing.GetAndShowHistory();
+        }
     }
 }

@@ -180,11 +180,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.cmbBoxExtensions.FormattingEnabled = true;
             this.cmbBoxExtensions.Items.AddRange(new object[] {
             ".*",
-            ".png",
-            ".jpg",
-            ".txt",
-            ".exe",
-            ".pdf"});
+            " Dossier"});
             this.cmbBoxExtensions.Location = new System.Drawing.Point(808, 69);
             this.cmbBoxExtensions.Name = "cmbBoxExtensions";
             this.cmbBoxExtensions.Size = new System.Drawing.Size(244, 23);

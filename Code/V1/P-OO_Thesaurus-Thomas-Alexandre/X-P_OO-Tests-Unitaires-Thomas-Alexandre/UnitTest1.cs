@@ -20,7 +20,7 @@ namespace X_P_OO_Tests_Unitaires_Thomas_Alexandre
             ListBox lbPath = indexing.lstBoxFilePath;            
 
             //act (code de test)
-            Research research = new Research(path);
+            ModelResearch research = new ModelResearch(path);
 
             //assert (renvoi du résultat)
             Assert.AreEqual(/*résultat attendu*/3, /*résultat actuel*/research.Search("", "*", lbFileName, lbType, lbSize, lbPath).Count, /*string expliquant le résultat attendu*/"nombre d'éléments dans la liste = 3");
@@ -40,7 +40,7 @@ namespace X_P_OO_Tests_Unitaires_Thomas_Alexandre
 
             bool namesAreRight = false;
             //act (code de test)
-            Research research = new Research(path);
+            ModelResearch research = new ModelResearch(path);
             result = research.Search("", "*", lbFileName, lbType, lbSize, lbPath);
 
             if (result[0].CurrentFile.Name == "test3.txt" && result[1].CurrentDirectory.Name == "test1" && result[2].CurrentDirectory.Name == "test2")
@@ -75,7 +75,7 @@ namespace X_P_OO_Tests_Unitaires_Thomas_Alexandre
 
             bool namesAreRight = false;
             //act (code de test)
-            Research research = new Research(path);
+            ModelResearch research = new ModelResearch(path);
             result = research.Search("", "*", lbFileName, lbType, lbSize, lbPath);
 
             if (result[0].CurrentFile.Name == "test3.txt" && result[1].CurrentDirectory.Name == "test1" && result[2].CurrentDirectory.Name == "test2")

@@ -56,3 +56,12 @@ F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexa
 F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.pdb
 F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.genruntimeconfig.cache
 F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.csproj.AssemblyReference.cache
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\Google.Protobuf.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\MySql.Data.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\ZstdNet.dll
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.csproj.CopyComplete

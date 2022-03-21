@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace P_OO_Thesaurus_Thomas_Alexandre
 {
-    public class Model
+    public class Index
     {
-        private Controler _controller;
-
-        public Controler Controler
+        public int IdIndex { get; set; }
+        public string DateIndex { get; set; }
+        public string PathIndex { get; set; }
+        public Index()
         {
-            get { return _controller; }
-            set { _controller = value; }
+
         }
     }
 }

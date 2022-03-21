@@ -44,46 +44,48 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             lblPathFiles.Text = cmbBoxDisk.Text;
             lstBoxFilePath.AutoScrollOffset = new Point(0,0);
             cmbBoxExtensions.SelectedIndex = 0;
-            cmbBoxDisk.SelectedIndex = 3;
-            Research research = new Research(lblPathFiles.Text);
-            research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);            
             componentIsInitialize = true;
         }
 
+        public void Start()
+        {
+            cmbBoxDisk.SelectedIndex = 3;
+            Controler.GetPath(lblPathFiles.Text);
+            ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
+        }
         private void cmbBoxDisk_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (changeDisk == false)
             {
                 lblPathFiles.Text = cmbBoxDisk.Text;
-                Research research = new Research(lblPathFiles.Text);
-                research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
+                Controler.GetPath(lblPathFiles.Text);
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lblNumberResults));
             }
         }
 
         private void btnPlusFilter_Click(object sender, EventArgs e)
         {
-            cmbBoxResearch.Text += "<";
-            cmbBoxResearch.Focus();
-            cmbBoxResearch.Select(cmbBoxResearch.Text.Length, 0);
+            BtnFilterClick('<');
         }
 
         private void btnMinusFilter_Click(object sender, EventArgs e)
-        {            
-            cmbBoxResearch.Text += ">";
-            cmbBoxResearch.Focus();
-            cmbBoxResearch.Select(cmbBoxResearch.Text.Length,0);
+        {
+            BtnFilterClick('>');
         }
 
         private void btnANDFilter_Click(object sender, EventArgs e)
         {
-            cmbBoxResearch.Text += "?";
-            cmbBoxResearch.Focus();
-            cmbBoxResearch.Select(cmbBoxResearch.Text.Length, 0);
+            BtnFilterClick('?');
         }
 
         private void btnORFilter_Click(object sender, EventArgs e)
         {
-            cmbBoxResearch.Text += "|";
+            BtnFilterClick('|');
+        }
+         
+        private void BtnFilterClick(char filter)
+        {
+            cmbBoxResearch.Text += filter;
             cmbBoxResearch.Focus();
             cmbBoxResearch.Select(cmbBoxResearch.Text.Length, 0);
         }
@@ -118,8 +120,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 changeDisk = true;
                 lblPathFiles.Text = fbd.SelectedPath;
                 cmbBoxDisk.SelectedItem = (fbd.SelectedPath).Substring(0, 3);
-                Research research = new Research(lblPathFiles.Text);
-                research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
+                Controler.GetPath(lblPathFiles.Text);
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lblNumberResults));
                 changeDisk = false;
             }
             {/* 
@@ -156,15 +158,15 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         {
             if (componentIsInitialize == true)
             {
-                Research research = new Research(lblPathFiles.Text);
-                research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
+                Controler.GetPath(lblPathFiles.Text);
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lblNumberResults));
             }
         }
 
         private void cmbBoxResearch_TextChanged(object sender, EventArgs e)
         {
-            Research research = new Research(lblPathFiles.Text);
-            research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
+            Controler.GetPath(lblPathFiles.Text);
+            ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lblNumberResults));
         }
 
         private void lstBoxFileName_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -176,16 +178,14 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 if (lstBoxFileType.Items[index].ToString() == "Dossier")
                 {
                     lblPathFiles.Text += lstBoxFileName.SelectedItem.ToString()+@"\";
-                    Research research = new Research(lblPathFiles.Text);
-                    research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);                    
+                    Controler.GetPath(lblPathFiles.Text);
+                    ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lblNumberResults));
                 }
                 else
                 {
                     //open file
                     File.OpenFile(lstBoxFilePath.Items[index].ToString());
                 }                
-
-
             }
         }
 
@@ -194,17 +194,41 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             string[] currentPath = lblPathFiles.Text.Split(@"\");
             if (currentPath.Length > 2)
             {
-
                 lblPathFiles.Text = string.Empty;
                 for (int i = 0; i < currentPath.Length - 2; i++)
                 {
                     lblPathFiles.Text += currentPath[i] + @"\";
                 }
-                Research research = new Research(lblPathFiles.Text);
-                research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);                
+                Controler.GetPath(lblPathFiles.Text);
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lblNumberResults));
             }
-
         }
+        private void ShowResult(List<File> filesObtained)
+        {
+            lstBoxFileName.Items.Clear();
+            lstBoxFileType.Items.Clear();
+            lstBoxFileSize.Items.Clear();
+            lstBoxFilePath.Items.Clear();
+            foreach (File file in filesObtained)
+            {
+                if (file.CurrentFile != null)
+                {
+                    lstBoxFileName.Items.Add($"{file.CurrentFile.Name}");
+                    lstBoxFileType.Items.Add($"{file.CurrentFile.Extension}");
+                    lstBoxFileSize.Items.Add($"{file.CurrentFile.Length}");
+                    lstBoxFilePath.Items.Add($"{file.CurrentFile.FullName}");
 
+                    if (!cmbBoxExtensions.Items.Contains(file.CurrentFile.Extension))
+                    {
+                        cmbBoxExtensions.Items.Add(file.CurrentFile.Extension);
+                    }
+                }
+                else
+                {
+                    lstBoxFileName.Items.Add($"{file.CurrentDirectory.Name}");
+                    lstBoxFilePath.Items.Add($"{file.CurrentDirectory.FullName}");
+                }
+            }
+        }
     }
 }

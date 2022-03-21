@@ -18,9 +18,11 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Model model = new Model();
+            ModelIndexingHistory modelIndexing = new ModelIndexingHistory();
+            ModelResearch modelResearch = new ModelResearch();
             Indexing view = new Indexing();
-            Controler controler = new Controler(view, model);
+            History history = new History();
+            Controler controler = new Controler(history, view, modelIndexing, modelResearch);
 
             Application.Run(view);
         }
