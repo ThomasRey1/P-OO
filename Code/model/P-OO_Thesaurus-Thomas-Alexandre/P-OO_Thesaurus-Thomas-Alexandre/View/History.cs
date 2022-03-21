@@ -12,6 +12,14 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 {
     public partial class History : Form
     {
+        private Controler _controller;
+
+        public Controler Controler
+        {
+            get { return _controller; }
+            set { _controller = value; }
+        }
+
         public History()
         {
             InitializeComponent();
@@ -24,10 +32,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
         private void btnReturnIndexingForm_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Indexing form = new Indexing();
-            form.StartPosition = FormStartPosition.CenterScreen; 
-            form.Show();
+            Controler.ShowIndexing();
         }
 
         public void GetAndShowHistory(List<Index> index)
@@ -42,6 +47,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 lstBoxFileNumber.Items.Add(item.IdIndex);
                 lstBoxFilePath.Items.Add(item.PathIndex);
             }
+
+            lblNumberResults.Text = index.Count + " Resultats";
         }
 
         private void cmbBoxResearch_TextChanged(object sender, EventArgs e)

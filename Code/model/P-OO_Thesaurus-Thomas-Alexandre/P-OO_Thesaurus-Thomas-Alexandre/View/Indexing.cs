@@ -37,9 +37,13 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             }
             lblPathFiles.Text = cmbBoxDisk.Text;
             cmbBoxExtensions.SelectedIndex = 0;
+        }
+
+        public void Start()
+        {
             cmbBoxDisk.SelectedIndex = 3;
-            Research research = new Research(lblPathFiles.Text);
-            research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
+            Controler.GetPath(lblPathFiles.Text);
+            ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text));
         }
 
         private void cmbBoxDisk_SelectedIndexChanged(object sender, EventArgs e)
@@ -47,8 +51,9 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             if (changeDisk == false)
             {
                 lblPathFiles.Text = cmbBoxDisk.Text;
-                Research research = new Research(lblPathFiles.Text);
-                research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
+                Controler.GetPath(lblPathFiles.Text);
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text));
+
             }
         }
 
@@ -102,8 +107,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 changeDisk = true;
                 lblPathFiles.Text = fbd.SelectedPath;
                 cmbBoxDisk.SelectedItem = (fbd.SelectedPath).Substring(0, 3);
-                Research research = new Research(lblPathFiles.Text);
-                research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath);
+                Controler.GetPath(lblPathFiles.Text);
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text));
                 changeDisk = false;
             }            
             {/* 
@@ -128,23 +133,13 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
         private void btnShowHistoryForm_Click(object sender, EventArgs e)
         {
-            History historyForm = new History();
-            historyForm.StartPosition = FormStartPosition.CenterScreen;
-            historyForm.Show();
-            historyForm.GetAndShowHistory(Controler.GetAndShowHistory());
-            this.Hide();
-            historyForm.Activate();
-        }
-
-        private void cmbBoxExtensions_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            Controler.ShowHistory();
         }
 
         private void cmbBoxResearch_TextChanged(object sender, EventArgs e)
         {
-            Research research = new Research(lblPathFiles.Text);
-            research.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text,lstBoxFileName, lstBoxFileType, lstBoxFileSize, lstBoxFilePath); 
+            Controler.GetPath(lblPathFiles.Text);
+            ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text));
         }
 
         private void lstBoxFileName_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -178,6 +173,34 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             index.PathIndex = lblPathFiles.Text;
 
             Controler.UpdateIndexingHistory(index);
+        }
+
+        private void ShowResult(List<File> filesObtained)
+        {
+            lstBoxFileName.Items.Clear();
+            lstBoxFileType.Items.Clear();
+            lstBoxFileSize.Items.Clear();
+            lstBoxFilePath.Items.Clear();
+            foreach (File file in filesObtained)
+            {
+                if (file.CurrentFile != null)
+                {
+                    lstBoxFileName.Items.Add($"{file.CurrentFile.Name}");
+                    lstBoxFileType.Items.Add($"{file.CurrentFile.Extension}");
+                    lstBoxFileSize.Items.Add($"{file.CurrentFile.Length}");
+                    lstBoxFilePath.Items.Add($"{file.CurrentFile.FullName}");
+
+                    if (!cmbBoxExtensions.Items.Contains(file.CurrentFile.Extension))
+                    {
+                        cmbBoxExtensions.Items.Add(file.CurrentFile.Extension);
+                    }
+                }
+                else
+                {
+                    lstBoxFileName.Items.Add($"{file.CurrentDirectory.Name}");
+                    lstBoxFilePath.Items.Add($"{file.CurrentDirectory.FullName}");
+                }
+            }
         }
     }
 }

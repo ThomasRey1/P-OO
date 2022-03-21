@@ -23,7 +23,7 @@ namespace test
         /// </summary>
         public Research()
         {
-            DirectoryInfo directory = new DirectoryInfo(@"K:\");
+            DirectoryInfo directory = new DirectoryInfo(@"F:\");
             FileInfo[] fileName = directory.GetFiles("*.*");
             int i = 0;
             foreach (FileInfo file in fileName)

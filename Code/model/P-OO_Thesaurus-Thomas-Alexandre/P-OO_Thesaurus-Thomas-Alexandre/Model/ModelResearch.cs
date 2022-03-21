@@ -5,21 +5,33 @@ using System.Windows.Forms;
 
 namespace P_OO_Thesaurus_Thomas_Alexandre
 {
-    public class Research
+    public class ModelResearch
     {// Properties
         private string _researchingString;
         private List<File> _filesObtained = new List<File>();
         private List<File> AllFiles = new List<File>();
         private int _numberResult;
+        private Controler _controller;
+
 
         // Getter - Setter
+        public Controler Controler
+        {
+            get { return _controller; }
+            set { _controller = value; }
+        }
 
         /// <summary>
         /// Constructor
         /// </summary>
-        public Research(string path)
+        public ModelResearch()
         {
-            DirectoryInfo drive = new DirectoryInfo(path);            
+            
+        }
+
+        public void GetPath(string path)
+        {
+            DirectoryInfo drive = new DirectoryInfo(path);
             FileInfo[] fileName = drive.GetFiles("*.*");
             int i = 0;
             foreach (FileInfo file in fileName)
@@ -42,13 +54,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 AllFiles.Add(currentDirectory);
             }
         }
-        /*
-        public string AddFilter(string btnFunction)
-        {
-            return "";
-        }*/
 
-        public List<File> Search(string research, string extension, ListBox lstBoxName, ListBox lstBoxType, ListBox lstBoxSize, ListBox lstBoxPath)
+        public List<File> Search(string research, string extension)
         {
             _filesObtained = new List<File>();
             foreach (File currentFile in AllFiles)
@@ -77,30 +84,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 }
             }
 
-            ShowResult(lstBoxName, lstBoxType, lstBoxSize, lstBoxPath);
             return _filesObtained;
-        }
-
-        private void ShowResult(ListBox lstBoxName, ListBox lstBoxType, ListBox lstBoxSize, ListBox lstBoxPath)
-        {
-            lstBoxName.Items.Clear();
-            lstBoxType.Items.Clear();
-            lstBoxSize.Items.Clear();
-            lstBoxPath.Items.Clear();
-            foreach(File file in _filesObtained)
-            {
-                if (file.CurrentFile != null)
-                {
-                    lstBoxName.Items.Add($"{file.CurrentFile.Name}");
-                    lstBoxType.Items.Add($"{file.CurrentFile.Extension}");
-                    lstBoxSize.Items.Add($"{file.CurrentFile.Length}");
-                    lstBoxPath.Items.Add($"{file.CurrentFile.FullName}");
-                }
-                else {
-                    lstBoxName.Items.Add($"{file.CurrentDirectory.Name}");                                       
-                    lstBoxPath.Items.Add($"{file.CurrentDirectory.FullName}");
-                }
-            }
         }
 
         public int CountResult()

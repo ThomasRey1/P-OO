@@ -14,7 +14,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre.Tests
         public void Search_1_Result()
         {
             // Arrange
-            Research search = new Research(@"F:\");
+            ModelResearch search = new ModelResearch(@"F:\");
             List<File> AllFiles = new List<File>();
             int Countfile = 0;
             string research = "0";
