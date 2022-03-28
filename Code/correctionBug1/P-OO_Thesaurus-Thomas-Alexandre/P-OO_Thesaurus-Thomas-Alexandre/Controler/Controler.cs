@@ -72,9 +72,9 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             _view.Show();
         }
 
-        public void GetPath(string path)
+        public bool GetPath(string path)
         {
-            ModelResearch.GetPath(path);
+            return ModelResearch.GetPath(path);
         }
 
         public List<File> Search(string research, string extension, Label lblNbResult)

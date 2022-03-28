@@ -34,26 +34,34 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         {
            
         }
-        public void GetPath(string path)
+        public bool GetPath(string path)
         {
-            _allFiles = new List<File>();
-            DirectoryInfo drive = new DirectoryInfo(path);
-            FileInfo[] fileName = drive.GetFiles("*.*");
-            int i = 0;
-            foreach (FileInfo file in fileName)
+            try
             {
-                i++;
-                File currentFile = new File(file, i);
-                currentFile.IndexationDate = DateTime.Now;
-                _allFiles.Add(currentFile);
+                _allFiles = new List<File>();
+                DirectoryInfo drive = new DirectoryInfo(path);
+                FileInfo[] fileName = drive.GetFiles("*.*");
+                int i = 0;
+                foreach (FileInfo file in fileName)
+                {
+                    i++;
+                    File currentFile = new File(file, i);
+                    currentFile.IndexationDate = DateTime.Now;
+                    _allFiles.Add(currentFile);
+                }
+                DirectoryInfo[] directoryName = drive.GetDirectories("*.*");
+                foreach (DirectoryInfo directories in directoryName)
+                {
+                    i++;
+                    File currentDirectory = new File(directories, i);
+                    currentDirectory.IndexationDate = DateTime.Now;
+                    _allFiles.Add(currentDirectory);
+                }
+                return false;
             }
-            DirectoryInfo[] directoryName = drive.GetDirectories("*.*");
-            foreach (DirectoryInfo directories in directoryName)
+            catch (UnauthorizedAccessException)
             {
-                i++;
-                File currentDirectory = new File(directories, i);
-                currentDirectory.IndexationDate = DateTime.Now;
-                _allFiles.Add(currentDirectory);
+                return true;
             }
         }
         public void AddFilter(string btnFunction)
@@ -84,22 +92,26 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             {
                 if (currentFile.CurrentFile == null)
                 {
-                    if (extension == "*" && currentFile.CurrentDirectory.Name.Contains(research))
+                    if (extension == " *" && currentFile.CurrentDirectory.Name.Contains(research))
                     {
                         _filesObtained.Add(currentFile);
                     }
-                    else if (extension == "Dossier" && currentFile.CurrentDirectory.Name.Contains(research))
+                    else if (extension == " Dossier" && currentFile.CurrentDirectory.Name.Contains(research))
                     {
                         _filesObtained.Add(currentFile);
                     }
                 }
                 else 
                 {
-                    if (extension == "*" && currentFile.CurrentFile.Name.Contains(research))
+                    if (extension == " *" && currentFile.CurrentFile.Name.Contains(research))
                     {
                         _filesObtained.Add(currentFile);
                     }
-                    else if (currentFile.CurrentFile.Extension.Substring(1) == extension && currentFile.CurrentFile.Name.Contains(research))
+                    else if (extension == " Fichier" && currentFile.CurrentFile.Name.Contains(research))
+                    {
+                        _filesObtained.Add(currentFile);
+                    }
+                    else if (currentFile.CurrentFile.Extension == extension && currentFile.CurrentFile.Name.Contains(research))
                     {
                         _filesObtained.Add(currentFile);
                     }

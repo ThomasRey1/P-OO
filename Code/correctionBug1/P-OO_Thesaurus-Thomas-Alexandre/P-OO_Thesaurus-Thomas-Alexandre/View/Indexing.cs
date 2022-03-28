@@ -37,19 +37,23 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             tlTip.SetToolTip(btnANDFilter, "Indique que dans ce mot ET un autre doivent être contenu dans la recherche");
             tlTip.SetToolTip(btnORFilter,"Indique que dans ce mot OU un autre doivent être contenu dans la recherche");            
 
-            foreach (DriveInfo drive in _allDrive)
-            {
-                cmbBoxDisk.Items.Add(drive.Name);
-            }            
-            lblPathFiles.Text = cmbBoxDisk.Text;
-            lstBoxFilePath.AutoScrollOffset = new Point(0,0);
-            cmbBoxExtensions.SelectedIndex = 0;
-            _componentIsInitialize = true;
         }
 
         public void Start()
         {
-            cmbBoxDisk.SelectedIndex = 3;
+
+            foreach (DriveInfo drive in _allDrive)
+            {
+                if (drive.DriveType != DriveType.CDRom && !Controler.GetPath(drive.Name))
+                {
+                    cmbBoxDisk.Items.Add(drive.Name);
+                }
+            }
+            lblPathFiles.Text = cmbBoxDisk.Text;
+            lstBoxFilePath.AutoScrollOffset = new Point(0, 0);
+            cmbBoxExtensions.SelectedIndex = 0;
+            _componentIsInitialize = true;
+            cmbBoxDisk.SelectedIndex = 0;
         }
         private void cmbBoxDisk_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -57,7 +61,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             {
                 lblPathFiles.Text = cmbBoxDisk.Text;
                 Controler.GetPath(lblPathFiles.Text);
-                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lblNumberResults));
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
             }
         }
 
@@ -91,7 +95,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         private void picBoxDiskNext_Click(object sender, EventArgs e)
         {
             _changeDisk = false;
-            if (cmbBoxDisk.SelectedIndex != _allDrive.Count() - 1)
+            if (cmbBoxDisk.SelectedIndex != cmbBoxDisk.Items.Count - 1)
             {
                 cmbBoxDisk.SelectedIndex += 1;
             }
@@ -115,11 +119,10 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             fbd.AutoUpgradeEnabled = false;
             if (fbd.ShowDialog() == DialogResult.OK)
             {
-                _changeDisk = true;
                 lblPathFiles.Text = fbd.SelectedPath;
                 cmbBoxDisk.SelectedItem = (fbd.SelectedPath).Substring(0, 3);
                 Controler.GetPath(lblPathFiles.Text);
-                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lblNumberResults));
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
                 _changeDisk = false;
             }
             {/* 
@@ -128,7 +131,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             for (int i = 0; i < cmbBoxExtensions.Items.Count; i++)
             {
                 string currentFilter = cmbBoxExtensions.GetItemText(cmbBoxExtensions.Items[i]);
-                allFilter += "|" + currentFilter.Substring(1) + " Files (*" + currentFilter + ")|*" + currentFilter;
+                allFilter += "|" + currentFilter + " Files (*" + currentFilter + ")|*" + currentFilter;
             }
             /////////open a file dialog
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
@@ -156,14 +159,14 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             if (_componentIsInitialize == true)
             {
                 Controler.GetPath(lblPathFiles.Text);
-                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lblNumberResults));
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
             }
         }
 
         private void cmbBoxResearch_TextChanged(object sender, EventArgs e)
         {
             Controler.GetPath(lblPathFiles.Text);
-            ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lblNumberResults));
+            ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
         }
 
         private void lstBoxFileName_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -175,8 +178,15 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 if (lstBoxFileType.Items[index].ToString() == "Dossier")
                 {
                     lblPathFiles.Text += lstBoxFileName.SelectedItem.ToString()+@"\";
-                    Controler.GetPath(lblPathFiles.Text);
-                    ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lblNumberResults));
+                    if (Controler.GetPath(lblPathFiles.Text))
+                    {
+                        picboxPreviousFile_Click(null, e);
+                        MessageBox.Show("Cette accès vous a été refusé", "Accès refusé", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+                    else
+                    {
+                        ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
+                    }
                 }
                 else
                 {
@@ -197,7 +207,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                     lblPathFiles.Text += currentPath[i] + @"\";
                 }
                 Controler.GetPath(lblPathFiles.Text);
-                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text.Substring(1), lblNumberResults));
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
             }
         }
         private void ShowResult(List<File> filesObtained)
@@ -217,7 +227,18 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
                     if (!cmbBoxExtensions.Items.Contains(file.CurrentFile.Extension))
                     {
-                        cmbBoxExtensions.Items.Add(file.CurrentFile.Extension);
+                        if (file.CurrentFile.Extension == "")
+                        {
+                            lstBoxFileType.Items[lstBoxFileType.Items.Count - 1] = "Fichier";
+                            if(!cmbBoxExtensions.Items.Contains(" Fichier"))
+                            {
+                                cmbBoxExtensions.Items.Add(" Fichier");
+                            }
+                        }
+                        else
+                        {
+                            cmbBoxExtensions.Items.Add(file.CurrentFile.Extension);
+                        }
                     }
                 }
                 else

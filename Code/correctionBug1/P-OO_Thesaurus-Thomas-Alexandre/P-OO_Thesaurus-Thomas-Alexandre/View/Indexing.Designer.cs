@@ -179,11 +179,12 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.cmbBoxExtensions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBoxExtensions.FormattingEnabled = true;
             this.cmbBoxExtensions.Items.AddRange(new object[] {
-            ".*",
+            " *",
             " Dossier"});
             this.cmbBoxExtensions.Location = new System.Drawing.Point(808, 69);
             this.cmbBoxExtensions.Name = "cmbBoxExtensions";
             this.cmbBoxExtensions.Size = new System.Drawing.Size(244, 23);
+            this.cmbBoxExtensions.Sorted = true;
             this.cmbBoxExtensions.TabIndex = 3;
             this.cmbBoxExtensions.SelectedIndexChanged += new System.EventHandler(this.cmbBoxExtensions_SelectedIndexChanged);
             // 
