@@ -1,0 +1,153 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj": {}
+  },
+  "projects": {
+    "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
+        "projectName": "P-OO_Thesaurus-Thomas-Alexandre",
+        "projectPath": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
+        "packagesPath": "C:\\Users\\thorey\\.nuget\\packages\\",
+        "outputPath": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\thorey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.28, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj",
+        "projectName": "X-P_OO-Tests-Unitaires-Thomas-Alexandre",
+        "projectPath": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj",
+        "packagesPath": "C:\\Users\\thorey\\.nuget\\packages\\",
+        "outputPath": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\thorey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows7.0",
+            "projectReferences": {
+              "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {
+                "projectPath": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows7.0",
+          "dependencies": {
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.9.4, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

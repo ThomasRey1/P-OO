@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\année2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\model\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {}
+    "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\model\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {}
   },
   "projects": {
-    "F:\\année2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\model\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {
+    "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\model\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\année2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\model\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
+        "projectUniqueName": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\model\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
         "projectName": "P-OO_Thesaurus-Thomas-Alexandre",
-        "projectPath": "F:\\année2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\model\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
+        "projectPath": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\model\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
         "packagesPath": "C:\\Users\\thorey\\.nuget\\packages\\",
-        "outputPath": "F:\\année2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\model\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\obj\\",
+        "outputPath": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\model\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YrLeX4NxYciPhX1ePC+iwHRlgfY/JsZLB3aZzYmIxi3mJDn/S8jhzIl7FXvUMhKzsvF2qPZo9n9RmKQFfm8GBA==",
+  "dgSpecHash": "HyyLSf/5Na6MqBeja3QTFRnr8+2DOTl+sOqZyHZOWugtmtp4EaXHYc9uBGLPq7wi6cc63aCkEiVfbgzodrfhkQ==",
   "success": true,
-  "projectFilePath": "F:\\année2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\model\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.Tests\\P-OO_Thesaurus-Thomas-Alexandre.Tests.csproj",
+  "projectFilePath": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\model\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.Tests\\P-OO_Thesaurus-Thomas-Alexandre.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thorey\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\thorey\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
