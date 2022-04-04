@@ -171,6 +171,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // lstBoxFileIndexingDate
             // 
+            this.lstBoxFileIndexingDate.Enabled = false;
             this.lstBoxFileIndexingDate.FormattingEnabled = true;
             this.lstBoxFileIndexingDate.ItemHeight = 15;
             this.lstBoxFileIndexingDate.Location = new System.Drawing.Point(681, 24);
@@ -189,6 +190,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // lstBoxFileNumber
             // 
+            this.lstBoxFileNumber.Enabled = false;
             this.lstBoxFileNumber.FormattingEnabled = true;
             this.lstBoxFileNumber.ItemHeight = 15;
             this.lstBoxFileNumber.Location = new System.Drawing.Point(-1, 24);
