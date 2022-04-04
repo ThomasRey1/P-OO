@@ -9,14 +9,31 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 {
     public class Controler
     {
-        private Indexing _view;
+        private ViewIndexing _view;
 
-        private History _viewHistory;
+        private ViewHistory _viewHistory;
 
         private ModelIndexingHistory _modelIndexing;
 
         private ModelResearch _modelResearch;
 
+        public ViewIndexing View
+        {
+            get { return _view; }
+            set { _view = value; }
+        }
+
+        public ViewHistory ViewHistory
+        {
+            get { return _viewHistory; }
+            set { _viewHistory = value; }
+        }
+
+        public ModelIndexingHistory ModelIndexing
+        {
+            get { return _modelIndexing; }
+            set { _modelIndexing = value; }
+        }
         public ModelResearch ModelResearch
         {
             get { return _modelResearch; }
@@ -24,27 +41,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         }
 
 
-        public History ViewHistory
-        {
-            get { return _viewHistory; }
-            set { _viewHistory = value; }
-        }
 
-
-        public ModelIndexingHistory ModelIndexing
-        {
-            get { return _modelIndexing; }
-            set { _modelIndexing = value; }
-        }
-
-
-        public Indexing View
-        {
-            get { return _view; }
-            set { _view = value; }
-        }
-
-        public Controler(History history, Indexing indexing, ModelIndexingHistory modelIndexing, ModelResearch modelResearch)
+        public Controler(ViewHistory history, ViewIndexing indexing, ModelIndexingHistory modelIndexing, ModelResearch modelResearch)
         {
             _viewHistory = history;
             _view = indexing;

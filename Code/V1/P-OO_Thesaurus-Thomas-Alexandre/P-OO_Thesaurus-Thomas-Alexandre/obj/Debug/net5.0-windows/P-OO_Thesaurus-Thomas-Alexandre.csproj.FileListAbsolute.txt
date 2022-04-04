@@ -44,8 +44,6 @@ F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexa
 F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\ref\P-OO_Thesaurus-Thomas-Alexandre.dll
 F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.pdb
 F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P_OO_Thesaurus_Thomas_Alexandre.Properties.Resources.resources
-F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P_OO_Thesaurus_Thomas_Alexandre.History.resources
-F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P_OO_Thesaurus_Thomas_Alexandre.Indexing.resources
 F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.csproj.GenerateResource.cache
 F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.GeneratedMSBuildEditorConfig.editorconfig
 F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.AssemblyInfoInputs.cache
@@ -65,3 +63,5 @@ F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexa
 F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
 F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\ZstdNet.dll
 F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.csproj.CopyComplete
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P_OO_Thesaurus_Thomas_Alexandre.ViewHistory.resources
+F:\01-Projets\P_OO-Smart-Thesaurus\P-OO-Alex\Code\V1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P_OO_Thesaurus_Thomas_Alexandre.ViewIndexing.resources

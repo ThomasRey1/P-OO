@@ -10,14 +10,19 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 {
     public class ModelIndexingHistory
     {
-        private Controler _controller;
+        private MySqlConnection _connection;
+
+        private Controler _controler;
+
+        private List<File> _files;
+
+        private List<Index> _indexList;
 
         public Controler Controler
         {
-            get { return _controller; }
-            set { _controller = value; }
+            get { return _controler; }
+            set { _controler = value; }
         }
-        private List<File> _files;
 
         public List<File> Files
         {
@@ -25,7 +30,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             set { _files = value; }
         }
 
-        private List<Index> _indexList;
 
         public List<Index> IndexList
         {
@@ -33,8 +37,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             set { _indexList = value; }
         }
 
-
-        private MySqlConnection _connection;
 
         public ModelIndexingHistory()
         {
@@ -60,9 +62,9 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 while (reader.Read())
                 {
                     Index index = new Index();
-                    index.IdIndex = Convert.ToInt32(reader.GetString(0));
-                    index.DateIndex = reader.GetString(1);
-                    index.PathIndex = reader.GetString(2);
+                    index._idIndex = Convert.ToInt32(reader.GetString(0));
+                    index._dateIndex = reader.GetString(1);
+                    index._pathIndex = reader.GetString(2);
                     IndexList.Add(index);
                 }
                 reader.Close();
@@ -81,8 +83,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             com.CommandText = $"INSERT INTO `t_index` (`idIndex`, `indDateIndexation`, `indPath`) VALUES(DEFAULT, @date, @path);";
             var cmd = new MySqlCommand(com.CommandText, _connection);
 
-            cmd.Parameters.AddWithValue("@date", index.DateIndex);
-            cmd.Parameters.AddWithValue("@path", index.PathIndex);
+            cmd.Parameters.AddWithValue("@date", index._dateIndex);
+            cmd.Parameters.AddWithValue("@path", index._pathIndex);
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
@@ -104,9 +106,9 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 while (reader.Read())
                 {
                     Index index = new Index();
-                    index.IdIndex = Convert.ToInt32(reader.GetString(0));
-                    index.DateIndex = reader.GetString(1);
-                    index.PathIndex = reader.GetString(2);
+                    index._idIndex = Convert.ToInt32(reader.GetString(0));
+                    index._dateIndex = reader.GetString(1);
+                    index._pathIndex = reader.GetString(2);
                     IndexList.Add(index);
                 }
                 reader.Close();

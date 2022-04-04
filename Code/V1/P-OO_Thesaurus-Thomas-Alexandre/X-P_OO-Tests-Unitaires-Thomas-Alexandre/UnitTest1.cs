@@ -13,7 +13,7 @@ namespace X_P_OO_Tests_Unitaires_Thomas_Alexandre
         {
             //arrange (déclaration des variables)                        
             string path = @"..\Unit test\";
-            Indexing indexing = new Indexing();
+            ViewIndexing indexing = new ViewIndexing();
             ListBox lbFileName = indexing.lstBoxFileName;
             ListBox lbType = indexing.lstBoxFileType;
             ListBox lbSize = indexing.lstBoxFileSize;
@@ -30,7 +30,7 @@ namespace X_P_OO_Tests_Unitaires_Thomas_Alexandre
         public void IsResearchFileNameGood()
         {
             //arrange (déclaration des variables)                        
-            Indexing indexing = new Indexing();
+            ViewIndexing indexing = new ViewIndexing();
             string path = @"..\Unit test\";
             ListBox lbFileName = indexing.lstBoxFileName;
             ListBox lbType = indexing.lstBoxFileType;
@@ -65,7 +65,7 @@ namespace X_P_OO_Tests_Unitaires_Thomas_Alexandre
         public void IsResearchFileContentGood()
         {
             //arrange (déclaration des variables)                        
-            Indexing indexing = new Indexing();
+            ViewIndexing indexing = new ViewIndexing();
             string path = @"..\Unit test\";
             ListBox lbFileName = indexing.lstBoxFileName;
             ListBox lbType = indexing.lstBoxFileType;

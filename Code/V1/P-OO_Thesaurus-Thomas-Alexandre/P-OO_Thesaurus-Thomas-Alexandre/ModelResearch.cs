@@ -9,12 +9,12 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
     {// Properties
         private string _researchingString;
         private List<File> _filesObtained;
-        private Controler _controller;
+        private Controler _controler;
 
         public Controler Controler
         {
-            get { return _controller; }
-            set { _controller = value; }
+            get { return _controler; }
+            set { _controler = value; }
         }
 
         public List<File> FileObtained

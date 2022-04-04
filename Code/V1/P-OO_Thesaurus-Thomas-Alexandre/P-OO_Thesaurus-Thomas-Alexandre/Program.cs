@@ -20,8 +20,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
             ModelIndexingHistory modelIndexing = new ModelIndexingHistory();
             ModelResearch modelResearch = new ModelResearch();
-            Indexing view = new Indexing();
-            History history = new History();
+            ViewIndexing view = new ViewIndexing();
+            ViewHistory history = new ViewHistory();
             Controler controler = new Controler(history, view, modelIndexing, modelResearch);
 
             Application.Run(view);
