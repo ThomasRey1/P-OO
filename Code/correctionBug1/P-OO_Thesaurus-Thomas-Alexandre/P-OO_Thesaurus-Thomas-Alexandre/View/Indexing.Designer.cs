@@ -104,7 +104,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // lstBoxFileType
             // 
-            this.lstBoxFileType.Enabled = false;
             this.lstBoxFileType.FormattingEnabled = true;
             this.lstBoxFileType.ItemHeight = 15;
             this.lstBoxFileType.Location = new System.Drawing.Point(380, 24);
