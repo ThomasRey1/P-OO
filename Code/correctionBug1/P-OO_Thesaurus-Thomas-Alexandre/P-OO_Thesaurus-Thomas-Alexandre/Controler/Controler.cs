@@ -72,14 +72,28 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             _view.Show();
         }
 
-        public bool GetPath(string path)
+        public bool GetPath(string path, string disk)
         {
-            return ModelResearch.GetPath(path);
+            if(disk != "Site Web")
+            {
+                return ModelResearch.GetPath(path);
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public List<File> Search(string research, string extension, Label lblNbResult)
+        public List<File> Search(string research, string extension, Label lblNbResult, string disk)
         {
-            return ModelResearch.Search(research, extension, lblNbResult);
+            if (disk != "Site Web")
+            {
+                return ModelResearch.Search(research, extension, lblNbResult);
+            }
+            else
+            {
+                return ModelResearch.SearchWeb(research, lblNbResult);
+            }
         }
 
         public void UpdateIndexingHistory(Index index)
@@ -90,6 +104,11 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         public List<Index> GetAndShowHistory()
         {
             return ModelIndexing.GetAndShowHistory();
+        }
+
+        public string InnerHtmlBalise(File file)
+        {
+            return ModelResearch.InnerHtmlBalise(file.CurrentNode);
         }
     }
 }

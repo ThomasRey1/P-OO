@@ -152,3 +152,4 @@ F:\annee2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\correctionBug1\P-OO_Thesaurus-T
 F:\annee2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\correctionBug1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\ref\P-OO_Thesaurus-Thomas-Alexandre.dll
 F:\annee2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\correctionBug1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.pdb
 F:\annee2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\correctionBug1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\obj\Debug\net5.0-windows\P-OO_Thesaurus-Thomas-Alexandre.genruntimeconfig.cache
+F:\annee2\Semestre2\Projet\P_OO\P-OO-Thomas\Code\correctionBug1\P-OO_Thesaurus-Thomas-Alexandre\P-OO_Thesaurus-Thomas-Alexandre\bin\Debug\net5.0-windows\HtmlAgilityPack.dll

@@ -104,6 +104,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // lstBoxFileType
             // 
+            this.lstBoxFileType.Enabled = false;
             this.lstBoxFileType.FormattingEnabled = true;
             this.lstBoxFileType.ItemHeight = 15;
             this.lstBoxFileType.Location = new System.Drawing.Point(380, 24);
@@ -117,7 +118,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.lstBoxFileName.FormattingEnabled = true;
             this.lstBoxFileName.HorizontalScrollbar = true;
             this.lstBoxFileName.ItemHeight = 15;
-            this.lstBoxFileName.Location = new System.Drawing.Point(-2, 20);
+            this.lstBoxFileName.Location = new System.Drawing.Point(-1, 24);
             this.lstBoxFileName.Name = "lstBoxFileName";
             this.lstBoxFileName.Size = new System.Drawing.Size(382, 364);
             this.lstBoxFileName.TabIndex = 5;
@@ -200,6 +201,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.cmbBoxResearch.Size = new System.Drawing.Size(612, 23);
             this.cmbBoxResearch.TabIndex = 2;
             this.cmbBoxResearch.TextChanged += new System.EventHandler(this.cmbBoxResearch_TextChanged);
+            this.cmbBoxResearch.Leave += new System.EventHandler(this.cmbBoxResearch_Leave);
             // 
             // cmbBoxDisk
             // 
@@ -412,6 +414,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         public System.Windows.Forms.ListBox lstBoxFileSize;
         public System.Windows.Forms.ListBox lstBoxFileType;
         private System.Windows.Forms.Button btnIndex;
+        private System.Windows.Forms.ListView lstViewFileName;
     }
 }
 

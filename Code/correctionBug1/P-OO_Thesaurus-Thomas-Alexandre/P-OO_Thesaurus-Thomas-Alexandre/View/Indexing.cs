@@ -24,7 +24,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         }
 
 
-        private bool _changeDisk = false;
         private bool _componentIsInitialize = false;
         private DriveInfo[] _allDrive = DriveInfo.GetDrives();        
 
@@ -56,7 +55,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
             foreach (DriveInfo drive in _allDrive)
             {
-                if (drive.DriveType != DriveType.CDRom && !Controler.GetPath(drive.Name))
+                if (drive.DriveType != DriveType.CDRom && !Controler.GetPath(drive.Name, cmbBoxDisk.Text))
                 {
                     cmbBoxDisk.Items.Add(drive.Name);
                 }
@@ -66,15 +65,28 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             cmbBoxExtensions.SelectedIndex = 0;
             _componentIsInitialize = true;
             cmbBoxDisk.SelectedIndex = 0;
+            cmbBoxDisk.Items.Add("Site Web");
         }
         private void cmbBoxDisk_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (_changeDisk == false)
+            if (cmbBoxDisk.Text != "Site Web")
             {
-                lblPathFiles.Text = cmbBoxDisk.Text;
-                Controler.GetPath(lblPathFiles.Text);
-                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
+                lblFilePath.Width = 357;
+                lstBoxFilePath.Width = 357;
+                lblFilePath.Location = new Point(683, -1);
+                lstBoxFilePath.Location = new Point(683, 24);
             }
+            else
+            {
+                lblFilePath.Width += 305;
+                lstBoxFilePath.Width += 305;
+                lblFilePath.Location = new Point(435, -1);
+                lstBoxFilePath.Location = new Point(435, 24);
+            }
+
+            lblPathFiles.Text = cmbBoxDisk.Text;
+            Controler.GetPath(lblPathFiles.Text, cmbBoxDisk.Text); 
+            ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults, cmbBoxDisk.Text));
         }
 
         private void btnPlusFilter_Click(object sender, EventArgs e)
@@ -106,7 +118,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
         private void picBoxDiskNext_Click(object sender, EventArgs e)
         {
-            _changeDisk = false;
             if (cmbBoxDisk.SelectedIndex != cmbBoxDisk.Items.Count - 1)
             {
                 cmbBoxDisk.SelectedIndex += 1;
@@ -115,7 +126,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
         private void picBoxDiskBefore_Click(object sender, EventArgs e)
         {
-            _changeDisk = false;
             if (cmbBoxDisk.SelectedIndex != 0)
             {
                 cmbBoxDisk.SelectedIndex -= 1;
@@ -133,9 +143,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             {
                 lblPathFiles.Text = fbd.SelectedPath;
                 cmbBoxDisk.SelectedItem = (fbd.SelectedPath).Substring(0, 3);
-                Controler.GetPath(lblPathFiles.Text);
-                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
-                _changeDisk = false;
+                Controler.GetPath(lblPathFiles.Text, cmbBoxDisk.Text);
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults, cmbBoxDisk.Text));
             }
             {/* 
             ////////Make the filter with all existing extension
@@ -170,41 +179,54 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         {
             if (_componentIsInitialize == true)
             {
-                Controler.GetPath(lblPathFiles.Text);
-                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
+                Controler.GetPath(lblPathFiles.Text, cmbBoxDisk.Text);
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults, cmbBoxDisk.Text));
             }
         }
 
         private void cmbBoxResearch_TextChanged(object sender, EventArgs e)
         {
-            Controler.GetPath(lblPathFiles.Text);
-            ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
+            Controler.GetPath(lblPathFiles.Text, cmbBoxDisk.Text); 
+            if (cmbBoxDisk.Text != "Site Web")
+            {
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults, cmbBoxDisk.Text));
+            }
         }
 
         private void lstBoxFileName_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             int index = this.lstBoxFileName.IndexFromPoint(e.Location);            
-            if (index != System.Windows.Forms.ListBox.NoMatches)
+            if (index != ListBox.NoMatches)
             {
-
-                if (lstBoxFileType.Items[index].ToString() == "Dossier")
+                if (cmbBoxDisk.Text != "Site Web")
                 {
-                    lblPathFiles.Text += lstBoxFileName.SelectedItem.ToString()+@"\";
-                    if (Controler.GetPath(lblPathFiles.Text))
+                    if (lstBoxFileType.Items[index].ToString() == "Dossier")
                     {
-                        picboxPreviousFile_Click(null, e);
-                        MessageBox.Show("Cette accès vous a été refusé", "Accès refusé", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        lblPathFiles.Text += lstBoxFileName.SelectedItem.ToString() + @"\";
+                        if (Controler.GetPath(lblPathFiles.Text, cmbBoxDisk.Text))
+                        {
+                            picboxPreviousFile_Click(null, e);
+                            MessageBox.Show("Cette accès vous a été refusé", "Accès refusé", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        else
+                        {
+                            ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults, cmbBoxDisk.Text));
+                        }
                     }
                     else
                     {
-                        ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
+                        //open file
+                        File.OpenFile(lstBoxFilePath.Items[index].ToString());
                     }
                 }
                 else
                 {
-                    //open file
-                    File.OpenFile(lstBoxFilePath.Items[index].ToString());
-                }                
+                    if (lstBoxFileType.Items[index].ToString() == "url")
+                    {
+                        //open file
+                        File.OpenUrl(lstBoxFilePath.Items[index].ToString(), cmbBoxResearch.Text);
+                    }
+                }
             }
         }
         
@@ -219,8 +241,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 {
                     lblPathFiles.Text += currentPath[i] + @"\";
                 }
-                Controler.GetPath(lblPathFiles.Text);
-                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
+                Controler.GetPath(lblPathFiles.Text, cmbBoxDisk.Text);
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults, cmbBoxDisk.Text));
             }
         }
         private void ShowResult(List<File> filesObtained)
@@ -229,37 +251,65 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             lstBoxFileType.Items.Clear();
             lstBoxFileSize.Items.Clear();
             lstBoxFilePath.Items.Clear();
-            foreach (File file in filesObtained)
+            if (cmbBoxDisk.Text != "Site Web")
             {
-                if (file.CurrentFile != null)
+                foreach (File file in filesObtained)
                 {
-                    lstBoxFileName.Items.Add($"{file.CurrentFile.Name}");
-                    lstBoxFileType.Items.Add($"{file.CurrentFile.Extension}");
-                    lstBoxFileSize.Items.Add($"{file.CurrentFile.Length}");
-                    lstBoxFilePath.Items.Add($"{file.CurrentFile.FullName}");
-
-                    if (!cmbBoxExtensions.Items.Contains(file.CurrentFile.Extension))
+                    if (file.CurrentFile != null)
                     {
-                        if (file.CurrentFile.Extension == "")
+                        lstBoxFileName.Items.Add($"{file.CurrentFile.Name}");
+                        lstBoxFileType.Items.Add($"{file.CurrentFile.Extension}");
+                        lstBoxFileSize.Items.Add($"{file.CurrentFile.Length}");
+                        lstBoxFilePath.Items.Add($"{file.CurrentFile.FullName}");
+
+                        if (!cmbBoxExtensions.Items.Contains(file.CurrentFile.Extension))
                         {
-                            lstBoxFileType.Items[lstBoxFileType.Items.Count - 1] = "Fichier";
-                            if(!cmbBoxExtensions.Items.Contains(" Fichier"))
+                            if (file.CurrentFile.Extension == "")
                             {
-                                cmbBoxExtensions.Items.Add(" Fichier");
+                                lstBoxFileType.Items[lstBoxFileType.Items.Count - 1] = "Fichier";
+                                if (!cmbBoxExtensions.Items.Contains(" Fichier"))
+                                {
+                                    cmbBoxExtensions.Items.Add(" Fichier");
+                                }
+                            }
+                            else
+                            {
+                                cmbBoxExtensions.Items.Add(file.CurrentFile.Extension);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        lstBoxFileName.Items.Add($"{file.CurrentDirectory.Name}");
+                        lstBoxFileType.Items.Add($"Dossier");
+                        lstBoxFileSize.Items.Add($" ");
+                        lstBoxFilePath.Items.Add($"{file.CurrentDirectory.FullName}");
+                    }
+                }
+            }
+            else
+            {
+                if(filesObtained != null)
+                {
+                    foreach (File file in filesObtained)
+                    {
+                        if(file.TypeNode == "image")
+                        {
+                            lstBoxFileName.Items.Add($"{file.CurrentNode.Attributes[0].Value}");
+                            if(file.CurrentNode.Attributes.Count == 2)
+                            {
+                                lstBoxFilePath.Items.Add($"{file.CurrentNode.Attributes[1].Value}");
                             }
                         }
                         else
                         {
-                            cmbBoxExtensions.Items.Add(file.CurrentFile.Extension);
+                            lstBoxFileName.Items.Add($"{Controler.InnerHtmlBalise(file)}"); 
+                            lstBoxFilePath.Items.Add($"{file.CurrentNode.GetAttributeValue("href", string.Empty)}");
                         }
+                        lstBoxFileType.Items.Add($"{file.TypeNode}");
+                        lstBoxFileSize.Items.Add($" ");
+                        
                     }
-                }
-                else
-                {
-                    lstBoxFileName.Items.Add($"{file.CurrentDirectory.Name}");
-                    lstBoxFileType.Items.Add($"Dossier");
-                    lstBoxFileSize.Items.Add($" ");
-                    lstBoxFilePath.Items.Add($"{file.CurrentDirectory.FullName}");
                 }
             }
         }
@@ -268,6 +318,14 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         {
             Index index = new Index(DateTime.Now.ToString(), lblPathFiles.Text);
             Controler.UpdateIndexingHistory(index);
+        }
+
+        private void cmbBoxResearch_Leave(object sender, EventArgs e)
+        {
+            if (cmbBoxDisk.Text == "Site Web")
+            {
+                ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults, cmbBoxDisk.Text));
+            }
         }
     }
 }

@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "f7iF7NbgMiXoMf7cdvJ4xMagsvt3XcuNmjdtQQHIwosoRyd09kKQsTWg5Gy9xdgWbihbh/LvkybcxR4ud/7LzA==",
+  "dgSpecHash": "I8UsfaohYzGsYMmou9e7cNZIr/FENSxjcmF4oPj8s7tAHyG9TdBkyNRHwjyr/rdwjIBtpuHpQv7A9JPj41Rq7w==",
   "success": true,
   "projectFilePath": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thorey\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\thorey\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\thorey\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",
+    "C:\\Users\\thorey\\.nuget\\packages\\htmlagilitypack\\1.11.42\\htmlagilitypack.1.11.42.nupkg.sha512",
     "C:\\Users\\thorey\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",
     "C:\\Users\\thorey\\.nuget\\packages\\k4os.compression.lz4.streams\\1.2.6\\k4os.compression.lz4.streams.1.2.6.nupkg.sha512",
     "C:\\Users\\thorey\\.nuget\\packages\\k4os.hash.xxhash\\1.0.6\\k4os.hash.xxhash.1.0.6.nupkg.sha512",

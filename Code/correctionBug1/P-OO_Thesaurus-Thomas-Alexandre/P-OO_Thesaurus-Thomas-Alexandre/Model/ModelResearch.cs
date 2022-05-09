@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using HtmlAgilityPack;
+using System.Text.RegularExpressions;
 
 namespace P_OO_Thesaurus_Thomas_Alexandre
 {
@@ -85,6 +87,53 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             }            
         }
 
+        public List<File> SearchWeb(string research, Label lblNumberResult, string filter = "filter")
+        {
+            _filesObtained = new List<File>();
+            if (research != "")
+            {
+                try
+                {
+                    var url = research;
+                    var web = new HtmlWeb();
+                    var doc = web.Load(url);
+                    if (doc.DocumentNode.SelectNodes("//a[@href]") != null)
+                    {
+                        foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//a[@href]"))
+                        {
+                            File file = new File(link, "url");
+                            _filesObtained.Add(file);
+                        }
+                    }
+                    if (doc.DocumentNode.SelectNodes("//img") != null)
+                    {
+                        foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//img"))
+                        {
+                            File file = new File(link, "image");
+                            _filesObtained.Add(file);
+                        }
+                    }
+                    lblNumberResult.Text = CountResult();
+                    return _filesObtained;
+                }
+                catch (UriFormatException)
+                {
+                    lblNumberResult.Text = CountResult();
+                    return null;
+                }
+                catch (System.Net.WebException)
+                {
+                    lblNumberResult.Text = CountResult();
+                    return null;
+                }
+            }
+            else
+            {
+                lblNumberResult.Text = CountResult();
+                return null;
+            }
+        }
+
         public List<File> Search(string research, string extension, Label lblNumberResult, string filter = "filter")
         {
             _filesObtained = new List<File>();
@@ -136,6 +185,34 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 numberResult += " Résultats";
             }
             return numberResult;
+        }
+
+        public string InnerHtmlBalise(HtmlNode node)
+        {
+            var htmlDoc = new HtmlAgilityPack.HtmlDocument();
+            htmlDoc.LoadHtml(node.InnerHtml);
+            if(node.Name == "img")
+            {
+                var htmlBody = node.Attributes[0].Value;
+                string innerText = htmlBody;
+                innerText = Regex.Replace(innerText, @"\r", "");
+                innerText = Regex.Replace(innerText, @"\n", "");
+                innerText = Regex.Replace(innerText, @"\s+", " ");
+                innerText = innerText.Trim();
+
+                return innerText;
+            }
+            else
+            {
+                var htmlBody = htmlDoc.DocumentNode.SelectSingleNode("/");
+                string innerText = htmlBody.InnerText;
+                innerText = Regex.Replace(innerText, @"\r", "");
+                innerText = Regex.Replace(innerText, @"\n", "");
+                innerText = Regex.Replace(innerText, @"\s+", " ");
+                innerText = innerText.Trim();
+
+                return innerText;
+            }
         }
     }
 }
