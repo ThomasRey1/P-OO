@@ -84,31 +84,32 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
+
             string command = string.Empty;
-            string[,] allFilesInfos = new string[files.Count,3];
+            string[,] allFilesInfos = new string[files.Count, 3];
             for (int i = 0; i < files.Count; i++)
             {
                 string[] currentFileInfo = files[i].Split(";");
                 for (int j = 0; j < 3; j++)
                 {
-                    allFilesInfos[i,j] = currentFileInfo[j];
+                    allFilesInfos[i, j] = currentFileInfo[j];
                 }
             }
-            cmd.CommandText = "";
+            MySqlCommand insertFileCom = _connection.CreateCommand();
             for (int i = 0; i < files.Count; i++)
             {
-                com.CommandText += $"INSERT INTO `t_file` (`idFile`, `filName`, `filType`, `filPath`, `fkIndex`) VALUES (DEFAULT, @name"+i+", @type"+i+", @path"+i+", 1);";                                
+                insertFileCom.CommandText += $"INSERT INTO `t_file` (`idFile`, `filName`, `filType`, `filPath`, `fkIndex`) VALUES (DEFAULT, @name" + i + ", @type" + i + ", @path" + i + ", 1);";
             }
-            cmd = new MySqlCommand(com.CommandText, _connection);
+                var commandFile = new MySqlCommand(insertFileCom.CommandText, _connection);
             for (int i = 0; i < files.Count; i++)
             {
-                cmd.Parameters.AddWithValue("@name" + i, allFilesInfos[i, 0]);
-                cmd.Parameters.AddWithValue("@type" + i, allFilesInfos[i, 1]);
-                cmd.Parameters.AddWithValue("@path" + i, allFilesInfos[i, 2]);
+                commandFile.Parameters.AddWithValue("@name" + i, allFilesInfos[i, 0]);
+                commandFile.Parameters.AddWithValue("@type" + i, allFilesInfos[i, 1]);
+                commandFile.Parameters.AddWithValue("@path" + i, allFilesInfos[i, 2]);
             }
 
-                cmd.Prepare();            
-            cmd.ExecuteNonQuery();
+            commandFile.Prepare();
+            commandFile.ExecuteNonQuery();
             _connection.Close();
         }
 
