@@ -81,8 +81,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // lstBoxFilePath
             // 
-            this.lstBoxFilePath.Enabled = false;
             this.lstBoxFilePath.FormattingEnabled = true;
+            this.lstBoxFilePath.HorizontalScrollbar = true;
             this.lstBoxFilePath.ItemHeight = 15;
             this.lstBoxFilePath.Location = new System.Drawing.Point(683, 24);
             this.lstBoxFilePath.Name = "lstBoxFilePath";
@@ -92,7 +92,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // lstBoxFileSize
             // 
-            this.lstBoxFileSize.Enabled = false;
             this.lstBoxFileSize.FormattingEnabled = true;
             this.lstBoxFileSize.ItemHeight = 15;
             this.lstBoxFileSize.Location = new System.Drawing.Point(532, 24);
@@ -103,7 +102,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             // lstBoxFileType
             // 
-            this.lstBoxFileType.Enabled = false;
             this.lstBoxFileType.FormattingEnabled = true;
             this.lstBoxFileType.ItemHeight = 15;
             this.lstBoxFileType.Location = new System.Drawing.Point(380, 24);

@@ -22,18 +22,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         public History()
         {
             InitializeComponent();
-            EventHandler handler = (s, e) =>
-            {
-                if (s == lstBoxFilePath)
-                {
-                    lstBoxFileNumber.TopIndex = lstBoxFilePath.TopIndex;
-                    lstBoxFileIndexingDate.TopIndex = lstBoxFilePath.TopIndex;
-                }
-            };
-
-            this.lstBoxFilePath.MouseCaptureChanged += handler;
-            this.lstBoxFilePath.MouseHover += handler;
-            this.lstBoxFilePath.MouseLeave += handler;
         }
 
         private void History_FormClosing(object sender, FormClosingEventArgs e)

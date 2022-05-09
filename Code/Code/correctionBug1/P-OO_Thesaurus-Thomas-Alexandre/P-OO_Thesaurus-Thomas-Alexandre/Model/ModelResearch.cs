@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace P_OO_Thesaurus_Thomas_Alexandre
@@ -138,17 +139,26 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             return numberResult;
         }
 
+
         public string GetFileInfos(string path)
         {
             string fileInfos = string.Empty;
-            DirectoryInfo drive = new DirectoryInfo(path);
-            FileInfo[] fileName = drive.GetFiles("*.*");
-            foreach (FileInfo file in fileName)
-            {                
-                fileInfos += file.Name+";";
-                fileInfos += file.Extension + ";";
-                fileInfos += file.Length + ";";
-                fileInfos += Path.GetFullPath(path);
+            if (Path.HasExtension(path))
+            {
+                fileInfos += Path.GetFileNameWithoutExtension(path) + ";";
+                fileInfos += Path.GetExtension(path) + ";";
+                fileInfos += Path.GetFullPath(path) + ";";
+            }
+            else
+            {
+                DirectoryInfo drive = new DirectoryInfo(path);
+                FileInfo[] fileName = drive.GetFiles("*.*");
+                foreach (FileInfo file in fileName)
+                {
+                    fileInfos += file.Name + ";";
+                    fileInfos += file.Extension + ";";
+                    fileInfos += Path.GetFullPath(path);
+                }
             }
             return fileInfos;
 
@@ -156,21 +166,35 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
         public List<string> GetPaths(string folderPath)
         {
-
             List<string> paths = new List<string>();
-            DirectoryInfo drive = new DirectoryInfo(folderPath);
-            FileInfo[] fileName = drive.GetFiles("*.*");
-            foreach (FileInfo file in fileName)
+            try
             {
-                paths.Add(folderPath+@"\"+file.Name);
+                DirectoryInfo drive = new DirectoryInfo(folderPath);
+                FileInfo[] fileName = drive.GetFiles("*.*");
+                foreach (FileInfo file in fileName)
+                {
+                    if (file.Extension != null)
+                    {
+                        paths.Add(folderPath + @"\" + file.Name);
+                    }
+                }
+                foreach (string directory in Directory.GetDirectories(folderPath))
+                {
+                    paths.Add(directory);
+                }
             }
+            catch (Exception)
+            {
+                string specialFile = folderPath + "fichier";
+            }
+
+
             return paths;
         }
 
-        public List<string> IndexFile(string basePath,List<string> paths)
+        List<string> files = new List<string>();
+        public List<string> IndexFile(string basePath, List<string> paths)
         {
-            List<string> files = new List<string>();
-
             Path.GetDirectoryName(basePath);
 
             if (paths.Count == 0)
@@ -181,23 +205,19 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             {
                 foreach (string path in paths)
                 {
-                    if (Path.GetExtension(path) != null)
+                    if (Path.HasExtension(path))
                     {
                         files.Add(GetFileInfos(path));
                     }
                     else
                     {
-                        foreach (string file in IndexFile(path, GetPaths(path)))
-                        {
-                            files.Add(file);
-                        }                        
+                        IndexFile(path, GetPaths(path));
                     }
                 }
 
                 return files;
             }
-            
-        }
 
+        }
     }
 }

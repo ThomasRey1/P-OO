@@ -35,21 +35,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             tlTip.SetToolTip(btnPlusFilter, "Indique que dans ce mot DOIT être contenu dans la recherche");
             tlTip.SetToolTip(btnMinusFilter, "Indique que dans ce mot NE DOIT PAS être contenu dans la recherche");
             tlTip.SetToolTip(btnANDFilter, "Indique que dans ce mot ET un autre doivent être contenu dans la recherche");
-            tlTip.SetToolTip(btnORFilter,"Indique que dans ce mot OU un autre doivent être contenu dans la recherche");
+            tlTip.SetToolTip(btnORFilter,"Indique que dans ce mot OU un autre doivent être contenu dans la recherche");            
 
-            EventHandler handler = (s, e) =>
-            {
-                if (s == lstBoxFileName)
-                {
-                    lstBoxFileType.TopIndex = lstBoxFileName.TopIndex;
-                    lstBoxFileSize.TopIndex = lstBoxFileName.TopIndex;
-                    lstBoxFilePath.TopIndex = lstBoxFileName.TopIndex;
-                }
-            };
-
-            this.lstBoxFileName.MouseCaptureChanged += handler;
-            this.lstBoxFileName.MouseHover += handler;
-            this.lstBoxFileName.MouseLeave += handler;
         }
 
         public void Start()
