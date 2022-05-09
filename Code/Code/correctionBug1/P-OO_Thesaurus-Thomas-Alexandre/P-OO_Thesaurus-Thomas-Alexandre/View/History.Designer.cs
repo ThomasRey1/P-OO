@@ -88,7 +88,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.btnMinusFilter.Name = "btnMinusFilter";
             this.btnMinusFilter.Size = new System.Drawing.Size(153, 41);
             this.btnMinusFilter.TabIndex = 10;
-            this.btnMinusFilter.Text = "-";
+            this.btnMinusFilter.Text = "SANS";
             this.btnMinusFilter.UseVisualStyleBackColor = true;
             // 
             // btnPlusFilter
@@ -99,7 +99,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.btnPlusFilter.Name = "btnPlusFilter";
             this.btnPlusFilter.Size = new System.Drawing.Size(153, 41);
             this.btnPlusFilter.TabIndex = 8;
-            this.btnPlusFilter.Text = "+";
+            this.btnPlusFilter.Text = "AVEC";
             this.btnPlusFilter.UseVisualStyleBackColor = true;
             // 
             // cmbBoxResearch
@@ -109,7 +109,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.cmbBoxResearch.Location = new System.Drawing.Point(377, 80);
             this.cmbBoxResearch.Name = "cmbBoxResearch";
             this.cmbBoxResearch.Size = new System.Drawing.Size(612, 23);
-            this.cmbBoxResearch.TabIndex = 7;
+            this.cmbBoxResearch.TabIndex = 7;            
+            this.cmbBoxResearch.TextChanged += new System.EventHandler(this.cmbBoxResearch_TextChanged);
             // 
             // lblNumberResults
             // 

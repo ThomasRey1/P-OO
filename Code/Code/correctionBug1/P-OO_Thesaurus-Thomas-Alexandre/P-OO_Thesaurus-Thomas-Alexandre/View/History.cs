@@ -50,6 +50,50 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             }
 
             lblNumberResults.Text = index.Count + " Resultats";
+        } 
+
+        private void cmbBoxResearch_TextChanged(object sender, EventArgs e)
+        {            
+            //ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
         }
+        /*private void ShowResult(List<File> filesObtained)
+        {
+            lstBoxFileName.Items.Clear();
+            lstBoxFileType.Items.Clear();
+            lstBoxFileSize.Items.Clear();
+            lstBoxFilePath.Items.Clear();
+            foreach (File file in filesObtained)
+            {
+                if (file.CurrentFile != null)
+                {
+                    lstBoxFileName.Items.Add($"{file.CurrentFile.Name}");
+                    lstBoxFileType.Items.Add($"{file.CurrentFile.Extension}");
+                    lstBoxFileSize.Items.Add($"{file.CurrentFile.Length}");
+                    lstBoxFilePath.Items.Add($"{file.CurrentFile.FullName}");
+
+                    if (!cmbBoxExtensions.Items.Contains(file.CurrentFile.Extension))
+                    {
+                        if (file.CurrentFile.Extension == "")
+                        {
+                            lstBoxFileType.Items[lstBoxFileType.Items.Count - 1] = "Fichier";
+                            if (!cmbBoxExtensions.Items.Contains(" Fichier"))
+                            {
+                                cmbBoxExtensions.Items.Add(" Fichier");
+                            }
+                        }
+                        else
+                        {
+                            cmbBoxExtensions.Items.Add(file.CurrentFile.Extension);
+                        }
+                    }
+                }
+                else
+                {
+                    lstBoxFileName.Items.Add($"{file.CurrentDirectory.Name}");
+                    lstBoxFileType.Items.Add($"Dossier");
+                    lstBoxFilePath.Items.Add($"{file.CurrentDirectory.FullName}");
+                }
+            }
+        }*/
     }
 }

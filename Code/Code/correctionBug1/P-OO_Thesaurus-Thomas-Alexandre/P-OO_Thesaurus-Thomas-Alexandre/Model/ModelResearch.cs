@@ -147,7 +147,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             {
                 fileInfos += Path.GetFileNameWithoutExtension(path) + ";";
                 fileInfos += Path.GetExtension(path) + ";";
-                fileInfos += Path.GetFullPath(path) + ";";
+                fileInfos += Path.GetFullPath(path);
             }
             else
             {
@@ -192,7 +192,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             return paths;
         }
 
-        List<string> files = new List<string>();
+        List<string> files = new List<string>();        
         public List<string> IndexFile(string basePath, List<string> paths)
         {
             Path.GetDirectoryName(basePath);
@@ -207,7 +207,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 {
                     if (Path.HasExtension(path))
                     {
-                        files.Add(GetFileInfos(path));
+                        files.Add(GetFileInfos(path));                        
                     }
                     else
                     {

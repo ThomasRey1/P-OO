@@ -86,7 +86,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         {            
             ModelIndexing.UpdateIndexingHistory(index, ModelResearch.IndexFile(basePath, filesPaths));
         }
-        
 
         public List<Index> GetAndShowHistory()
         {

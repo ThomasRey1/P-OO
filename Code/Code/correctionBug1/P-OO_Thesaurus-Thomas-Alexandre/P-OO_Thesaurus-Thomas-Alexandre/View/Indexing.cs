@@ -260,7 +260,12 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             }
 
             Controler.UpdateIndexingHistory(index, lblPathFiles.Text, filesPath);
-            MessageBox.Show("Indexation réussie");
+            MessageBox.Show("Indexation réussie" );            
+        }
+
+        private void cmbBoxResearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

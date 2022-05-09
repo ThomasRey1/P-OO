@@ -196,6 +196,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.cmbBoxResearch.Name = "cmbBoxResearch";
             this.cmbBoxResearch.Size = new System.Drawing.Size(612, 23);
             this.cmbBoxResearch.TabIndex = 2;
+            this.cmbBoxResearch.SelectedIndexChanged += new System.EventHandler(this.cmbBoxResearch_SelectedIndexChanged);
             this.cmbBoxResearch.TextChanged += new System.EventHandler(this.cmbBoxResearch_TextChanged);
             // 
             // cmbBoxDisk
