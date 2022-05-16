@@ -13,6 +13,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         private List<File> _filesObtained;
         private List<File> _allFiles;
         private Controler _controler;
+        List<string> files = new List<string>();
+
 
         public Controler Controler
         {
@@ -213,6 +215,84 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
                 return innerText;
             }
+        }
+        public string GetFileInfos(string path)
+        {
+            string fileInfos = string.Empty;
+            if (Path.HasExtension(path))
+            {
+                fileInfos += Path.GetFileNameWithoutExtension(path) + ";";
+                fileInfos += Path.GetExtension(path) + ";";
+                fileInfos += Path.GetFullPath(path);
+            }
+            else
+            {
+                DirectoryInfo drive = new DirectoryInfo(path);
+                FileInfo[] fileName = drive.GetFiles("*.*");
+                foreach (FileInfo file in fileName)
+                {
+                    fileInfos += file.Name + ";";
+                    fileInfos += file.Extension + ";";
+                    fileInfos += Path.GetFullPath(path);
+                }
+            }
+            return fileInfos;
+
+        }
+
+        public List<string> GetPaths(string folderPath)
+        {
+            List<string> paths = new List<string>();
+            try
+            {
+                DirectoryInfo drive = new DirectoryInfo(folderPath);
+                FileInfo[] fileName = drive.GetFiles("*.*");
+                foreach (FileInfo file in fileName)
+                {
+                    if (file.Extension != null)
+                    {
+                        paths.Add(folderPath + @"\" + file.Name);
+                    }
+                }
+                foreach (string directory in Directory.GetDirectories(folderPath))
+                {
+                    paths.Add(directory);
+                }
+            }
+            catch (Exception)
+            {
+                string specialFile = folderPath + "fichier";
+            }
+
+
+            return paths;
+        }
+
+        public List<string> IndexFile(string basePath, List<string> paths)
+        {
+            Path.GetDirectoryName(basePath);
+
+            if (paths.Count == 0)
+            {
+                return files;
+            }
+            else
+            {
+                foreach (string path in paths)
+                {
+                    if (Path.HasExtension(path))
+                    {
+                        files.Add(GetFileInfos(path));
+                    }
+                    else
+                    {
+                        IndexFile(path, GetPaths(path));
+                    }
+                }
+
+                return files;
+            }
+
         }
     }
 }

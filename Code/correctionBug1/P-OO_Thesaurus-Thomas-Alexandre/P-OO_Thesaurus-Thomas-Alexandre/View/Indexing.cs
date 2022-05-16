@@ -317,7 +317,14 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         private void btnIndex_Click(object sender, EventArgs e)
         {
             Index index = new Index(DateTime.Now.ToString(), lblPathFiles.Text);
-            Controler.UpdateIndexingHistory(index);
+            List<string> filesPath = new List<string>();
+            foreach (string path in lstBoxFilePath.Items)
+            {
+                filesPath.Add(path);
+            }
+
+            Controler.UpdateIndexingHistory(index, lblPathFiles.Text, filesPath);
+            MessageBox.Show("Indexation réussie");
         }
 
         private void cmbBoxResearch_Leave(object sender, EventArgs e)

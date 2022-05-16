@@ -68,7 +68,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             _connection.Close();
         }
 
-        public void UpdateIndexingHistory(Index index)
+        public void UpdateIndexingHistory(Index index, List<string> files)
         {
             IndexList.Clear();
             _connection.Open();
@@ -84,6 +84,50 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             cmd.Prepare();
 
             cmd.ExecuteNonQuery();
+
+            MySqlCommand indexcom = _connection.CreateCommand();
+
+            indexcom.CommandType = System.Data.CommandType.Text;
+            indexcom.CommandText = $"SELECT * FROM `t_index` ORDER BY `idIndex` DESC LIMIT 1";
+            MySqlDataReader idindex = indexcom.ExecuteReader();
+            int id = 0;
+
+
+            while (idindex.Read())
+            {
+                id = (int)idindex.GetValue(0);
+            }
+
+            idindex.Close();
+
+            string command = string.Empty;
+            string[,] allFilesInfos = new string[files.Count, 3];
+            for (int i = 0; i < files.Count; i++)
+            {
+                string[] currentFileInfo = files[i].Split(";");
+                for (int j = 0; j < 3; j++)
+                {
+                    allFilesInfos[i, j] = currentFileInfo[j];
+                }
+            }
+
+            MySqlCommand insertFileCom = _connection.CreateCommand();
+            StringBuilder stringBuilder = new StringBuilder();
+            for (int i = 0; i < files.Count; i++)
+            {
+                string[] tempPath = allFilesInfos[i, 2].Split(@"\");
+                string pathDoubleBackslash = string.Empty;
+                for (int j = 0; j < tempPath.Count() - 2; j++)
+                {
+                    pathDoubleBackslash += tempPath[j] + @"\\";
+                }
+                pathDoubleBackslash += tempPath[tempPath.Count() - 1];
+                stringBuilder.Append(@"INSERT INTO `t_file` (`idFile`, `filName`, `filType`, `filPath`, `fkIndex`) VALUES (DEFAULT, '" + allFilesInfos[i, 0] + "', '" + allFilesInfos[i, 1] + "', '" + pathDoubleBackslash + "'," + id + " );");
+            }
+            insertFileCom.CommandText = stringBuilder.ToString();
+            var commandFile = new MySqlCommand(insertFileCom.CommandText, _connection);
+
+            commandFile.ExecuteNonQuery();
             _connection.Close();
         }
 

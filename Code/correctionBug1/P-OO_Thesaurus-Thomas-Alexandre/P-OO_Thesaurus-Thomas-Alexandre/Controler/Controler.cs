@@ -96,9 +96,9 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             }
         }
 
-        public void UpdateIndexingHistory(Index index)
+        public void UpdateIndexingHistory(Index index, string basePath, List<string> filesPaths)
         {
-            ModelIndexing.UpdateIndexingHistory(index);
+            ModelIndexing.UpdateIndexingHistory(index, ModelResearch.IndexFile(basePath, filesPaths));
         }
 
         public List<Index> GetAndShowHistory()
