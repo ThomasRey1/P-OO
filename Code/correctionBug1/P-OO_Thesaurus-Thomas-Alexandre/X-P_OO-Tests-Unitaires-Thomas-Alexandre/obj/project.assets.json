@@ -6980,19 +6980,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pd50uyl\\.nuget\\packages\\": {}
+    "C:\\Users\\thorey\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Thomas\\P-OO\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj",
+      "projectUniqueName": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj",
       "projectName": "X-P_OO-Tests-Unitaires-Thomas-Alexandre",
-      "projectPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Thomas\\P-OO\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj",
-      "packagesPath": "C:\\Users\\pd50uyl\\.nuget\\packages\\",
-      "outputPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Thomas\\P-OO\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\obj\\",
+      "projectPath": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj",
+      "packagesPath": "C:\\Users\\thorey\\.nuget\\packages\\",
+      "outputPath": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\pd50uyl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\thorey\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7006,8 +7010,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows7.0",
           "projectReferences": {
-            "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Thomas\\P-OO\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {
-              "projectPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Thomas\\P-OO\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj"
+            "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {
+              "projectPath": "F:\\annee2\\Semestre2\\Projet\\P_OO\\P-OO-Thomas\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj"
             }
           }
         }
@@ -7054,7 +7058,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -300,6 +300,10 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                             {
                                 lstBoxFilePath.Items.Add($"{file.CurrentNode.Attributes[1].Value}");
                             }
+                            else
+                            {
+                                lstBoxFilePath.Items.Add($"null");
+                            }
                         }
                         else
                         {
@@ -316,15 +320,47 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
         private void btnIndex_Click(object sender, EventArgs e)
         {
-            Index index = new Index(DateTime.Now.ToString(), lblPathFiles.Text);
-            List<string> filesPath = new List<string>();
-            foreach (string path in lstBoxFilePath.Items)
+            if (cmbBoxDisk.Text != "Site Web")
             {
-                filesPath.Add(path);
-            }
+                Index index = new Index(DateTime.Now.ToString(), lblPathFiles.Text);
+                List<string> filesPath = new List<string>();
+                foreach (string path in lstBoxFilePath.Items)
+                {
+                    filesPath.Add(path);
+                }
 
-            Controler.UpdateIndexingHistory(index, lblPathFiles.Text, filesPath);
-            MessageBox.Show("Indexation réussie");
+                Controler.UpdateIndexingHistory(index, lblPathFiles.Text, filesPath);
+                MessageBox.Show("Indexation réussie");
+            }
+            else
+            {
+                Index index = new Index(DateTime.Now.ToString(), cmbBoxResearch.Text);
+                List<string> files = new List<string>();
+                string file = "";
+                for(int i = 0; i != lstBoxFileType.Items.Count; i++)
+                {
+                    if (lstBoxFileName.Items[i] == "")
+                    {
+                        file = "null;" + lstBoxFileType.Items[i] + ";";
+                    }
+                    else
+                    {
+                        file = lstBoxFileName.Items[i] + ";" + lstBoxFileType.Items[i] + ";";
+                    }
+                    if (lstBoxFilePath.Items[i] == "")
+                    {
+                        file += "null";
+                    }
+                    else
+                    {
+                        file += lstBoxFilePath.Items[i];
+                    }
+                    files.Add(file);
+                }
+
+                Controler.UpdateIndexingHistoryWeb(index, files);
+                MessageBox.Show("Indexation réussie");
+            }
         }
 
         private void cmbBoxResearch_Leave(object sender, EventArgs e)
