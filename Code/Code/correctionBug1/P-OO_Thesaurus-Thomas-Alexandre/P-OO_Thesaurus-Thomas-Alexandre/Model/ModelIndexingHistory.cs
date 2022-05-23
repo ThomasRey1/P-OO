@@ -45,7 +45,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         /// constructor
         /// </summary>
         public ModelIndexingHistory()
-        {
+        {            
             Files = new List<File>();
             IndexList = new List<Index>();
 
@@ -181,5 +181,35 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             _connection.Close();
             return IndexList;
         }
+
+        /// <summary>
+        /// Get the history for the file
+        /// </summary>
+        /// <returns>return all of the indexed file that are in the DB</returns>
+        public List<string> GetAndShowHistoryForFile(int idIndex)
+        {
+            List<string> files = new List<string>();
+            _connection.Open();
+
+            MySqlCommand com = _connection.CreateCommand();
+
+            //select all from t_file where the id of indexation equal to the id of the selected index
+            com.CommandType = System.Data.CommandType.Text;
+            com.CommandText = "SELECT * FROM t_file where fkIndex = "+ idIndex;
+            MySqlDataReader reader = com.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    string file = reader.GetString(1)+";"+reader.GetString(2)+";"+reader.GetString(3);
+                    files.Add(file);
+                }
+                reader.Close();
+            }
+            _connection.Close();
+            return files;
+        }
+
+
     }
 }

@@ -140,13 +140,23 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             ModelIndexing.UpdateIndexingHistory(index, ModelResearch.IndexFile(basePath, filesPaths));
         }
         /// <summary>
-        /// get the history and show it
+        /// get the history for the index
         /// </summary>
-        /// <returns>return the history</returns>
+        /// <returns>return the history of index</returns>
         public List<Index> GetAndShowHistory()
         {
             return ModelIndexing.GetAndShowHistory();
         }
+        /// <summary>
+        /// Get the history of the file
+        /// </summary>
+        /// <returns>history of files</returns>
+        public List<string> GetAndShowHistoryForFile(int idIndex)
+        {
+            return ModelIndexing.GetAndShowHistoryForFile(idIndex);
+        }
+
+
         /// <summary>
         /// search the html tag in web
         /// </summary>

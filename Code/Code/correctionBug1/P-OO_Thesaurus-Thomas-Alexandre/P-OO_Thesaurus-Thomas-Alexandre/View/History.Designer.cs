@@ -88,7 +88,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.btnMinusFilter.Name = "btnMinusFilter";
             this.btnMinusFilter.Size = new System.Drawing.Size(153, 41);
             this.btnMinusFilter.TabIndex = 10;
-            this.btnMinusFilter.Text = "-";
+            this.btnMinusFilter.Text = "OR";
             this.btnMinusFilter.UseVisualStyleBackColor = true;
             // 
             // btnPlusFilter
@@ -99,7 +99,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.btnPlusFilter.Name = "btnPlusFilter";
             this.btnPlusFilter.Size = new System.Drawing.Size(153, 41);
             this.btnPlusFilter.TabIndex = 8;
-            this.btnPlusFilter.Text = "+";
+            this.btnPlusFilter.Text = "AND";
             this.btnPlusFilter.UseVisualStyleBackColor = true;
             // 
             // cmbBoxResearch
@@ -128,7 +128,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.lblFileName.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.lblFileName.Location = new System.Drawing.Point(-1, -1);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(53, 26);
+            this.lblFileName.Size = new System.Drawing.Size(77, 26);
             this.lblFileName.TabIndex = 1;
             this.lblFileName.Text = "N°";
             // 
@@ -148,9 +148,9 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.lblFilePath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFilePath.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblFilePath.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblFilePath.Location = new System.Drawing.Point(51, -1);
+            this.lblFilePath.Location = new System.Drawing.Point(75, -1);
             this.lblFilePath.Name = "lblFilePath";
-            this.lblFilePath.Size = new System.Drawing.Size(631, 26);
+            this.lblFilePath.Size = new System.Drawing.Size(607, 26);
             this.lblFilePath.TabIndex = 4;
             this.lblFilePath.Text = "Chemin d\'accès";
             // 
@@ -183,10 +183,11 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             // 
             this.lstBoxFilePath.FormattingEnabled = true;
             this.lstBoxFilePath.ItemHeight = 15;
-            this.lstBoxFilePath.Location = new System.Drawing.Point(51, 24);
+            this.lstBoxFilePath.Location = new System.Drawing.Point(75, 24);
             this.lstBoxFilePath.Name = "lstBoxFilePath";
-            this.lstBoxFilePath.Size = new System.Drawing.Size(631, 364);
+            this.lstBoxFilePath.Size = new System.Drawing.Size(607, 364);
             this.lstBoxFilePath.TabIndex = 6;
+            this.lstBoxFilePath.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstBoxFilePath_MouseDoubleClick);
             // 
             // lstBoxFileNumber
             // 
@@ -195,7 +196,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.lstBoxFileNumber.ItemHeight = 15;
             this.lstBoxFileNumber.Location = new System.Drawing.Point(-1, 24);
             this.lstBoxFileNumber.Name = "lstBoxFileNumber";
-            this.lstBoxFileNumber.Size = new System.Drawing.Size(53, 364);
+            this.lstBoxFileNumber.Size = new System.Drawing.Size(77, 364);
             this.lstBoxFileNumber.TabIndex = 5;
             // 
             // History
