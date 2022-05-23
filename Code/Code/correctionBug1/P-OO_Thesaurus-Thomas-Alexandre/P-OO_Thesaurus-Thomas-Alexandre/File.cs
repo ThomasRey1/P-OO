@@ -89,6 +89,11 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             };
             process.Start();
         }
+        /// <summary>
+        /// Open selected url 
+        /// </summary>
+        /// <param name="url">url of the site</param>
+        /// <param name="urlBase"></param>
         static public void OpenUrl(string url, string urlBase)
         {
             if (url.StartsWith('/'))
