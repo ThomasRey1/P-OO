@@ -1,4 +1,8 @@
-﻿using System;
+﻿///ETML
+///Auteur : Alexandre King
+///Date :07.03.22
+///Description :history view
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +16,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 {
     public partial class History : Form
     {
+        //define the controler of this view
         private Controler _controler;
 
         public Controler Controler
@@ -19,81 +24,60 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             get { return _controler; }
             set { _controler = value; }
         }
+        /// <summary>
+        /// constructor
+        /// </summary>
         public History()
         {
             InitializeComponent();
+            EventHandler handler = (s, e) =>
+            {
+                if (s == lstBoxFilePath)
+                {
+                    lstBoxFileNumber.TopIndex = lstBoxFilePath.TopIndex;
+                    lstBoxFileIndexingDate.TopIndex = lstBoxFilePath.TopIndex;
+                }
+            };
+
+            this.lstBoxFilePath.MouseCaptureChanged += handler;
+            this.lstBoxFilePath.MouseHover += handler;
+            this.lstBoxFilePath.MouseLeave += handler;
         }
 
+        /// <summary>
+        /// Exit the application when the history form is closed
+        /// </summary>        
         private void History_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-
+        //return to the indexing view
         private void btnReturnIndexingForm_Click(object sender, EventArgs e)
         {
             Controler.ViewHistory.Hide();
             Controler.View.Show();
         }
+        /// <summary>
+        /// show the history
+        /// </summary>
         public void GetAndShowHistory()
         {
+            //get the list list of all index in DB
             List<Index> index = Controler.GetAndShowHistory();
 
+            //clear all listbox
             lstBoxFileIndexingDate.Items.Clear();
             lstBoxFileNumber.Items.Clear();
             lstBoxFilePath.Items.Clear();
-
+            //show each index of the history
             foreach (Index item in index)
             {
                 lstBoxFileIndexingDate.Items.Add(item.DateIndex);
                 lstBoxFileNumber.Items.Add(item.IdIndex);
                 lstBoxFilePath.Items.Add(item.PathIndex);
             }
-
+            //show the number of result
             lblNumberResults.Text = index.Count + " Resultats";
-        } 
-
-        private void cmbBoxResearch_TextChanged(object sender, EventArgs e)
-        {            
-            //ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults));
         }
-        /*private void ShowResult(List<File> filesObtained)
-        {
-            lstBoxFileName.Items.Clear();
-            lstBoxFileType.Items.Clear();
-            lstBoxFileSize.Items.Clear();
-            lstBoxFilePath.Items.Clear();
-            foreach (File file in filesObtained)
-            {
-                if (file.CurrentFile != null)
-                {
-                    lstBoxFileName.Items.Add($"{file.CurrentFile.Name}");
-                    lstBoxFileType.Items.Add($"{file.CurrentFile.Extension}");
-                    lstBoxFileSize.Items.Add($"{file.CurrentFile.Length}");
-                    lstBoxFilePath.Items.Add($"{file.CurrentFile.FullName}");
-
-                    if (!cmbBoxExtensions.Items.Contains(file.CurrentFile.Extension))
-                    {
-                        if (file.CurrentFile.Extension == "")
-                        {
-                            lstBoxFileType.Items[lstBoxFileType.Items.Count - 1] = "Fichier";
-                            if (!cmbBoxExtensions.Items.Contains(" Fichier"))
-                            {
-                                cmbBoxExtensions.Items.Add(" Fichier");
-                            }
-                        }
-                        else
-                        {
-                            cmbBoxExtensions.Items.Add(file.CurrentFile.Extension);
-                        }
-                    }
-                }
-                else
-                {
-                    lstBoxFileName.Items.Add($"{file.CurrentDirectory.Name}");
-                    lstBoxFileType.Items.Add($"Dossier");
-                    lstBoxFilePath.Items.Add($"{file.CurrentDirectory.FullName}");
-                }
-            }
-        }*/
     }
 }

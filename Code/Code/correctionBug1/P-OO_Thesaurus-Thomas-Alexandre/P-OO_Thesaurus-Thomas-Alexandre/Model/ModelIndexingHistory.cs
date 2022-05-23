@@ -1,4 +1,8 @@
-﻿using System;
+﻿///ETML
+///Auteur : Thomas Rey
+///Date :07.03.22
+///Description :
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +14,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 {
     public class ModelIndexingHistory
     {
+        //define the controler and create a list of files and index
         private Controler _controler;
 
         public Controler Controler
@@ -33,14 +38,18 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             set { _indexList = value; }
         }
 
-
+        //create a connection to the server
         private MySqlConnection _connection;
 
+        /// <summary>
+        /// constructor
+        /// </summary>
         public ModelIndexingHistory()
         {
             Files = new List<File>();
             IndexList = new List<Index>();
 
+            //define all info to connect to the server
             string server = "localhost";
             string database = "db_p_oo";
             string uid = "root";
@@ -48,12 +57,14 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
             _connection = new MySqlConnection(connectionString);
+            //open the server
             _connection.Open();
-
+            //create a MySQL command
             MySqlCommand com = _connection.CreateCommand();
 
             com.CommandType = System.Data.CommandType.Text;
             com.CommandText = "SELECT * FROM t_index";
+            //read the result of the command
             MySqlDataReader reader = com.ExecuteReader();
             if (reader.HasRows)
             {
@@ -61,17 +72,25 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 {
                     Index index = new Index(reader.GetString(1), reader.GetString(2));
                     index.IdIndex = Convert.ToInt32(reader.GetString(0));
+                    //get all the result and add them to a list
                     IndexList.Add(index);
                 }
                 reader.Close();
             }
+            //close the connection
             _connection.Close();
         }
 
+        /// <summary>
+        /// Update the history (add index and files when indexing)
+        /// </summary>
+        /// <param name="index">index to put in the DB</param>
+        /// <param name="files">files to put in the DB</param>
         public void UpdateIndexingHistory(Index index, List<string> files)
         {
             IndexList.Clear();
             _connection.Open();
+            //add the index in the DB
 
             MySqlCommand com = _connection.CreateCommand();
 
@@ -85,6 +104,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
             cmd.ExecuteNonQuery();
 
+
+            //get that same index to give it in parameter for the files
             MySqlCommand indexcom = _connection.CreateCommand();
 
             indexcom.CommandType = System.Data.CommandType.Text;
@@ -99,6 +120,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             }
 
             idindex.Close();
+
+            //stock all the files in the DB
 
             string command = string.Empty;
             string[,] allFilesInfos = new string[files.Count, 3];
@@ -117,20 +140,24 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             {
                 string[] tempPath = allFilesInfos[i, 2].Split(@"\");
                 string pathDoubleBackslash = string.Empty;
-                for (int j = 0; j < tempPath.Count()-2; j++)
+                for (int j = 0; j < tempPath.Count() - 2; j++)
                 {
                     pathDoubleBackslash += tempPath[j] + @"\\";
                 }
                 pathDoubleBackslash += tempPath[tempPath.Count() - 1];
-                stringBuilder.Append(@"INSERT INTO `t_file` (`idFile`, `filName`, `filType`, `filPath`, `fkIndex`) VALUES (DEFAULT, '" + allFilesInfos[i, 0] + "', '" + allFilesInfos[i, 1] + "', '" + pathDoubleBackslash + "',"+ id +" );");
+                //MySQL command that add the file with his infos, his path with a double backslash and the id of the indexation
+                stringBuilder.Append(@"INSERT INTO `t_file` (`idFile`, `filName`, `filType`, `filPath`, `fkIndex`) VALUES (DEFAULT, '" + allFilesInfos[i, 0] + "', '" + allFilesInfos[i, 1] + "', '" + pathDoubleBackslash + "'," + id + " );");
             }
             insertFileCom.CommandText = stringBuilder.ToString();
             var commandFile = new MySqlCommand(insertFileCom.CommandText, _connection);
-            
+
             commandFile.ExecuteNonQuery();
             _connection.Close();
         }
-
+        /// <summary>
+        /// Get the history for the index
+        /// </summary>
+        /// <returns>return all of the indexed index that are in the DB</returns>
         public List<Index> GetAndShowHistory()
         {
             IndexList.Clear();

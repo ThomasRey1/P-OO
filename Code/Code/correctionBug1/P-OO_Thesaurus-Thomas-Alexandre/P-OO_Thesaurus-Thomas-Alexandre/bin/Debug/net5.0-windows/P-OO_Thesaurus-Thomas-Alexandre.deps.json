@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "P-OO_Thesaurus-Thomas-Alexandre/1.0.0": {
         "dependencies": {
+          "HtmlAgilityPack": "1.11.42",
           "MySql.Data": "8.0.28"
         },
         "runtime": {
@@ -31,6 +32,14 @@
           "lib/netstandard2.0/Google.Protobuf.dll": {
             "assemblyVersion": "3.14.0.0",
             "fileVersion": "3.14.0.0"
+          }
+        }
+      },
+      "HtmlAgilityPack/1.11.42": {
+        "runtime": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.11.42.0",
+            "fileVersion": "1.11.42.0"
           }
         }
       },
@@ -159,6 +168,13 @@
       "sha512": "sha512-9AkodyGNmLI+wJJPbwpWLmh4BMHoXDQ9+8qvDPhQQi/BNsleqKMBn3OlyLwC6CALwan2kc5+Cenb8fJSITX3nQ==",
       "path": "google.protobuf/3.14.0",
       "hashPath": "google.protobuf.3.14.0.nupkg.sha512"
+    },
+    "HtmlAgilityPack/1.11.42": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LDc1bEfF14EY2DZzak4xvzWvbpNXK3vi1u0KQbBpLUN4+cx/VrvXhgCAMSJhSU5vz0oMfW9JZIR20vj/PkDHPA==",
+      "path": "htmlagilitypack/1.11.42",
+      "hashPath": "htmlagilitypack.1.11.42.nupkg.sha512"
     },
     "K4os.Compression.LZ4/1.2.6": {
       "type": "package",

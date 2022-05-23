@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "OOTnAMYLTFSAZsE4kU/e919CgIycXw+/ZtwwKoRFLWc3H/I3CT+bLhQLeYI7h03KAwv54E78lcBEoSiXYUfeUQ==",
+  "dgSpecHash": "tX51BndiYnzcIeUiCjcSGA3+q12/6FSC5g+nkTB3x96zMTdkAU+/BSZ+KOTGYF8HHEYdwo3riaK3XcN6s9r04A==",
   "success": true,
-  "projectFilePath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
+  "projectFilePath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\P-OO\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pd50uyl\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\pd50uyl\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",
+    "C:\\Users\\pd50uyl\\.nuget\\packages\\htmlagilitypack\\1.11.42\\htmlagilitypack.1.11.42.nupkg.sha512",
     "C:\\Users\\pd50uyl\\.nuget\\packages\\k4os.compression.lz4\\1.2.6\\k4os.compression.lz4.1.2.6.nupkg.sha512",
     "C:\\Users\\pd50uyl\\.nuget\\packages\\k4os.compression.lz4.streams\\1.2.6\\k4os.compression.lz4.streams.1.2.6.nupkg.sha512",
     "C:\\Users\\pd50uyl\\.nuget\\packages\\k4os.hash.xxhash\\1.0.6\\k4os.hash.xxhash.1.0.6.nupkg.sha512",

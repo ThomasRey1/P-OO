@@ -1,3 +1,7 @@
+///ETML
+///Auteur : Alexandre King
+///Date :07.03.22
+///Description :Is called when the program is started
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +22,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            //Using the MVC template            
             ModelIndexingHistory modelIndexing = new ModelIndexingHistory();
             ModelResearch modelResearch = new ModelResearch();
             Indexing view = new Indexing();

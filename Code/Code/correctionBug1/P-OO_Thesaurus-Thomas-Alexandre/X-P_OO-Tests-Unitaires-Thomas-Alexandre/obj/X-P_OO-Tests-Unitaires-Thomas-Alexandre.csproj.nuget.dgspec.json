@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj": {}
+    "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\P-OO\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj": {}
   },
   "projects": {
-    "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {
+    "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\P-OO\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
+        "projectUniqueName": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\P-OO\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
         "projectName": "P-OO_Thesaurus-Thomas-Alexandre",
-        "projectPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
+        "projectPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\P-OO\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj",
         "packagesPath": "C:\\Users\\pd50uyl\\.nuget\\packages\\",
-        "outputPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\obj\\",
+        "outputPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\P-OO\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pd50uyl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.42, )"
+            },
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.28, )"
@@ -67,14 +71,14 @@
         }
       }
     },
-    "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj": {
+    "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\P-OO\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj",
+        "projectUniqueName": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\P-OO\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj",
         "projectName": "X-P_OO-Tests-Unitaires-Thomas-Alexandre",
-        "projectPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj",
+        "projectPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\P-OO\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre.csproj",
         "packagesPath": "C:\\Users\\pd50uyl\\.nuget\\packages\\",
-        "outputPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\obj\\",
+        "outputPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\P-OO\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\X-P_OO-Tests-Unitaires-Thomas-Alexandre\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pd50uyl\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -91,8 +95,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows7.0",
             "projectReferences": {
-              "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {
-                "projectPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj"
+              "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\P-OO\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj": {
+                "projectPath": "F:\\01-Projets\\P_OO-Smart-Thesaurus\\P-OO-Alex\\P-OO\\Code\\Code\\correctionBug1\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre\\P-OO_Thesaurus-Thomas-Alexandre.csproj"
               }
             }
           }
