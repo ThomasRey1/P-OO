@@ -6,7 +6,7 @@
       "version": "5.0.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\pd50uyl\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\thomr\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\pd50uyl\\.nuget\\packages"
     ],
     "configProperties": {

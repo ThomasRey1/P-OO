@@ -154,6 +154,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             commandFile.ExecuteNonQuery();
             _connection.Close();
         }
+
         /// <summary>
         /// Get the history for the index
         /// </summary>

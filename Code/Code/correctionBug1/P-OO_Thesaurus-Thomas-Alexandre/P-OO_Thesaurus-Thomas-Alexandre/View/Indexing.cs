@@ -33,7 +33,8 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         //Detect if all the componet is already initialize or not
         private bool _componentIsInitialize = false;
         //table of DriveInfo that contain all the drivers of the pc
-        private DriveInfo[] _allDrive = DriveInfo.GetDrives();        
+        private DriveInfo[] _allDrive = DriveInfo.GetDrives();  
+        
         /// <summary>
         /// Main Function
         /// </summary>
@@ -60,6 +61,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             this.lstBoxFileName.MouseHover += handler;
             this.lstBoxFileName.MouseLeave += handler;
         }
+
         /// <summary>
         /// is called when the program is started
         /// </summary>
@@ -113,26 +115,31 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             //show all files found
             ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults, cmbBoxDisk.Text));
         }
+
         //when the plus filter button is pressed
         private void btnPlusFilter_Click(object sender, EventArgs e)
         {
             BtnFilterClick('<');
         }
+
         //when the minus filter button is pressed
         private void btnMinusFilter_Click(object sender, EventArgs e)
         {
             BtnFilterClick('>');
         }
+
         //when the and filter button is pressed
         private void btnANDFilter_Click(object sender, EventArgs e)
         {
             BtnFilterClick('?');
         }
+
         //when the or filter button is pressed
         private void btnORFilter_Click(object sender, EventArgs e)
         {
             BtnFilterClick('|');
         }
+
         /// <summary>
         /// when a filter button is pressed
         /// </summary>
@@ -283,6 +290,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 ShowResult(Controler.Search(cmbBoxResearch.Text, cmbBoxExtensions.Text, lblNumberResults, cmbBoxDisk.Text));
             }
         }
+
         /// <summary>
         /// Show the result of the files in the current folder
         /// </summary>
@@ -343,6 +351,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                     //show each image and link founded
                     foreach (File file in filesObtained)
                     {
+                        //if is a image
                         if(file.TypeNode == "image")
                         {
                             lstBoxFileName.Items.Add($"{file.CurrentNode.Attributes[0].Value}");

@@ -28,20 +28,17 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             set { _modelResearch = value; }
         }
 
-
         public History ViewHistory
         {
             get { return _viewHistory; }
             set { _viewHistory = value; }
         }
 
-
         public ModelIndexingHistory ModelIndexing
         {
             get { return _modelIndexing; }
             set { _modelIndexing = value; }
         }
-
 
         public Indexing View
         {
@@ -109,6 +106,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 return false;
             }
         }
+
         /// <summary>
         /// research all files
         /// </summary>
@@ -139,6 +137,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         {
             ModelIndexing.UpdateIndexingHistory(index, ModelResearch.IndexFile(basePath, filesPaths));
         }
+
         /// <summary>
         /// get the history for the index
         /// </summary>
@@ -147,6 +146,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         {
             return ModelIndexing.GetAndShowHistory();
         }
+
         /// <summary>
         /// Get the history of the file
         /// </summary>
@@ -155,7 +155,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         {
             return ModelIndexing.GetAndShowHistoryForFile(idIndex);
         }
-
 
         /// <summary>
         /// search the html tag in web

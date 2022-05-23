@@ -19,7 +19,6 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         private Controler _controler;
         List<string> files = new List<string>();
 
-
         public Controler Controler
         {
             get { return _controler; }
@@ -42,6 +41,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         {
            
         }
+
         /// <summary>
         /// Get all file and add them in a list (get file for when you change driver or get in a folder, 
         /// only get file and folder at the current path not the ones in the folders.
@@ -78,6 +78,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 return true;
             }
         }
+
         /// <summary>
         /// Add filter to the research
         /// </summary>
@@ -102,6 +103,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                     break;
             }            
         }
+
         /// <summary>
         /// search for the web 
         /// </summary>
@@ -112,6 +114,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
         public List<File> SearchWeb(string research, Label lblNumberResult, string filter = "filter")
         {
             _filesObtained = new List<File>();
+            // If there is a path in the research bar
             if (research != "")
             {
                 try
@@ -119,6 +122,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                     var url = research;
                     var web = new HtmlWeb();
                     var doc = web.Load(url);
+                    // Collect all the href in an a balise
                     if (doc.DocumentNode.SelectNodes("//a[@href]") != null)
                     {
                         foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//a[@href]"))
@@ -127,6 +131,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                             _filesObtained.Add(file);
                         }
                     }
+                    // Collect all image
                     if (doc.DocumentNode.SelectNodes("//img") != null)
                     {
                         foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//img"))
@@ -135,6 +140,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                             _filesObtained.Add(file);
                         }
                     }
+                    // Count the number
                     lblNumberResult.Text = CountResult();
                     return _filesObtained;
                 }
@@ -202,6 +208,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             lblNumberResult.Text = CountResult();
             return _filesObtained;
         }
+
         /// <summary>
         /// count the number of results
         /// </summary>
@@ -222,10 +229,11 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             }
             return numberResult;
         }
+
         /// <summary>
-        /// 
+        /// reformats the names and links displayed in the listboxes
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="node">determines if it's an image or an href</param>
         /// <returns></returns>
         public string InnerHtmlBalise(HtmlNode node)
         {
@@ -254,6 +262,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
                 return innerText;
             }
         }
+
         /// <summary>
         /// get all infos of a specific file
         /// </summary>
@@ -285,6 +294,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
             return fileInfos;
 
         }
+
         /// <summary>
         /// get all the paths in a folder
         /// </summary>
@@ -318,6 +328,7 @@ namespace P_OO_Thesaurus_Thomas_Alexandre
 
             return paths;
         }
+
         /// <summary>
         /// recursive indexing algorithm
         /// </summary>
